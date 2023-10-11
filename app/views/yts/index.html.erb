@@ -70,31 +70,32 @@
 <hr>
 
  
-<div class="movies_box">
 
-    <% 5.times do %>
-        <div class="movies_card">
-            <div class="movies_image">
-                <div class="hover">
-                    <i class="fa-solid fa-star"></i>
-                    <p class="rate">8.5/10</p>
-                    <p class="categories">Action</p>
-                    <p class="categories">Drama</p>
-                    <a href="#" class="btn">View Details</a>
+<% movie_names=["Top Gun", "The Jungle" , "Scream" , "Batman" , "Spiderman" ] %>
+    <div class="movies_box">
+
+        <% 5.times do |index| %>
+            <div class="movies_card">
+                <div class="movies_image">
+                    <div class="hover">
+                        <i class="fa-solid fa-star"></i>
+                        <p class="rate">8.5/10</p>
+                        <p class="categories">Action</p>
+                        <p class="categories">Drama</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                    <%= image_tag 'image/Top_Gun.jpg' %>
                 </div>
-                <%= image_tag 'image/Top_Gun.jpg' , alt: 'Top Gun: Maverick Poster' %>
+                <div class="text">
+                    <p class="name">
+                        <%= movie_names[index] %>
+                    </p>
+                    <p class="year">2022</p>
+                </div>
             </div>
-            <div class="text">
-                <p class="name">
-                <p class="name">Top Gun:Maverick</p>
-                   
-                </p>
-                <p class="year">2022</p>
-            </div>
-        </div>
 
-        <% end %>
-</div>
+            <% end %>
+    </div>
 
 
 
