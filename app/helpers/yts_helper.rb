@@ -1,0 +1,2 @@
+module YtsHelper
+end
