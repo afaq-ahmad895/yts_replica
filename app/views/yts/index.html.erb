@@ -69,33 +69,50 @@
         </div>
 <hr>
 
- 
 
-<% movie_names=["Top Gun", "The Jungle" , "Scream" , "Batman" , "Spiderman" ] %>
-    <div class="movies_box">
+<% movie_details=[ { name: "Top Gun" , rating: "8.5/10" , action: "Action" , drama: "Drama" , year: "2021" ,
+image: "image/Top_Gun.jpg" }, { name: "Jungle Cruise" , rating: "7.9/10" , action: "Adventure" ,
+drama: "Fantasy" , year: "2022" , image: "image/jungle.jpeg" }, { name: "Avatar" , rating: "9.2/10" ,
+action: "Sci-Fi" , drama: "Mystery" , year: "2023" , image: "image/avatar.jpeg" }, { name: "Scream" ,
+rating: "6.8/10" , action: "Suspense" , drama: "Mystery" , year: "2024" , image: "image/scream.jpg" }, {
+name: "Anabella" , rating: "8.0/10" , action: "Thriller" , drama: "Horror" , year: "2025" ,
+image: "image/anabella.jpg" } ] %>
 
-        <% 5.times do |index| %>
-            <div class="movies_card">
-                <div class="movies_image">
-                    <div class="hover">
-                        <i class="fa-solid fa-star"></i>
-                        <p class="rate">8.5/10</p>
-                        <p class="categories">Action</p>
-                        <p class="categories">Drama</p>
-                        <a href="#" class="btn">View Details</a>
-                    </div>
-                    <%= image_tag 'image/Top_Gun.jpg' %>
-                </div>
-                <div class="text">
-                    <p class="name">
-                        <%= movie_names[index] %>
+<div class="movies_box">
+    <% 5.times do |index| %>
+        <div class="movies_card">
+            <div class="movies_image">
+                <div class="hover">
+                    <i class="fa-solid fa-star"></i>
+                    <p class="rate">
+                        <%= movie_details[index][:rating] %>
                     </p>
-                    <p class="year">2022</p>
+                    <p class="categories">
+                        <%= movie_details[index][:action] %>
+                    </p>
+                    <p class="categories">
+                        <%= movie_details[index][:drama] %>
+                    </p>
+                    <a href="#" class="btn">View Details</a>
                 </div>
+                <%= image_tag movie_details[index][:image]%>
             </div>
+            <div class="text">
+                <p class="name">
+                    <%= movie_details[index][:name] %>
+                </p>
 
-            <% end %>
-    </div>
+                <p class="year">
+                    <%= movie_details[index][:year] %>
+                </p>
+            </div>
+        </div>
+        <% end %>
+</div>
+
+
+
+
 
 
 
