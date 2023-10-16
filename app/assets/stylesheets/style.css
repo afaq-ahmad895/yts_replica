@@ -206,7 +206,7 @@ section .movies_box{
     align-items: center;
     justify-content: space-between;
     padding: 0 50px;
-    float:left;
+    float:left;   
 }
 
 section .movies_box .movies_card{
@@ -295,7 +295,7 @@ section .movies_box .movies_card .text{
     font-weight: bold;
 }
 
-section .movies_box .movies_card .text p.name:hover{
+section .movies_box .movies_card .text p.name{
     transition: 0.3s;
     color: #919191;
     cursor: pointer;
