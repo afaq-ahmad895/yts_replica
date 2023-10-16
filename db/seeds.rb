@@ -3,5 +3,10 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+ Product.create([
+
+{ name: 'Product1' , description: 'This is my 1st product' }, 
+{ name: 'Procuct2', description: 'This is my second product' },
+{ name: 'Product3', description: 'This is my third product' },
+
+])
