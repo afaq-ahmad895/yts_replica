@@ -206,16 +206,13 @@ section .movies_box{
     align-items: center;
     justify-content: space-between;
     padding: 0 50px;
-    float:left;
-    
+    float:left;   
 }
 
 section .movies_box .movies_card{
     width: 220px;
     height: 355px;
     overflow: hidden;
-    
-
 }
 
 section .movies_box .movies_card .movies_image{
