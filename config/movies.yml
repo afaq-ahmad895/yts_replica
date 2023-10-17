@@ -1,8 +1,6 @@
-[
-    {"name": "Laptop", "price": 1000},
-    {"name": "Mouse", "price": 20},
-    {"name": "Keyboard", "price": 50}
-]
-
+{
+    "name1": ["hassan", "Ali"],
+    "name2": ["afaq", "ahmad"]
+}
 
 
