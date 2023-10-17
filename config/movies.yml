@@ -1,10 +1,8 @@
- {
-    "Alice": {
-        "age": 30,
-        "email": "alice@email.com"
-    },
-    "Bob": {
-        "age": 25,
-        "email": "bob@email.com"
-    }
-}
+[
+    {"name": "Laptop", "price": 1000},
+    {"name": "Mouse", "price": 20},
+    {"name": "Keyboard", "price": 50}
+]
+
+
+
