@@ -1,5 +1,5 @@
-{
-    "apple": "red",
-    "banana": "yellow",
-    "cherry": "red"
-}
+[
+    {"name": "Alice", "age": 25},
+    {"name": "Bob", "age": 20},
+    {"name": "Charlie", "age": 23}
+]
