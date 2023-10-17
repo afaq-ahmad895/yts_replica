@@ -1,7 +1,10 @@
-[
-    [1, 2],
-    [3, 4]
-]
-
-
-
+ {
+    "Alice": {
+        "age": 30,
+        "email": "alice@email.com"
+    },
+    "Bob": {
+        "age": 25,
+        "email": "bob@email.com"
+    }
+}
