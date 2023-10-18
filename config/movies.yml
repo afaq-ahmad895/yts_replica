@@ -1,4 +1,12 @@
-person:
-  name: afaq
-  job: farig
-  skill: nothing
+-
+  - fruits
+  - Apple
+  - Banana
+  - Cherry
+  - Date
+-
+  - fruits
+  - Apple
+  - Banana
+  - Cherry
+  - Date
