@@ -1,0 +1,16 @@
+person_detail:
+  name: ali
+  job: farig
+  skill: nothing
+person_goal:
+  name: ali
+  job: web_dev
+  skill: ruby_on_rails
+person_address:
+  street: house#2
+  city: lahore
+  country: paksitan
+
+
+
+
