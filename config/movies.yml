@@ -1,10 +1,8 @@
--
-  name: afaq
-  age: 24
-  city: lahore
-  email: lahore@example.com
--
-  name: afaq
-  age: 24
-  city: lahore
-  email: lahore@example.com
+name1:
+  - afaq
+  - hassan
+  - usama
+name2:
+    - fahad
+    - ali
+    - musa
