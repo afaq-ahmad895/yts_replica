@@ -1,21 +1,36 @@
 require 'yaml'
 require 'pry'
-data = YAML.load_file('nested_array.yml')
+
+#binding.pry
+ data = YAML.load_file('nested_array.yml')
+
+
+days_array = data['february_2023'].shift
+remaining_arrays = data['february_2023']
 
 puts "Enter a date between 1 and 28:"
-date = gets.chomp.to_i
+number = gets.chomp.to_i
 
-case date
-when 1..28
-  # Calculate the row and column index
+index_value = nil
 
-  day_index = (date - 1) % 7   # Calculate the index for the day within a week (0 to 6)
-                                
-  week_index = (date - 1) / 7  # Calculate the index for the week within the month (0 to 4)
+remaining_arrays .each do |array|
 
-  day = data['february_2023'][week_index][day_index]   # Retrieve the day of the week from the 'february_2023' section of the data
-  
-  puts "February #{date}, 2023 is a #{day}"
-else
-  puts "Invalid date. Please enter a date between 1 and 28."
+    index_value = array.find_index(number)
+
+   if index_value
+    break  # No need to continue searching if found
+  end
 end
+
+ if index_value
+    day = days_array[index_value]
+     puts "#{number} is present in the calendar data for February at index #{index_value}."
+  puts "February #{number}, 2023 is a #{day}"
+ 
+ else
+   puts "#{number} is not present in the calendar data for February."
+ end
+
+
+
+
