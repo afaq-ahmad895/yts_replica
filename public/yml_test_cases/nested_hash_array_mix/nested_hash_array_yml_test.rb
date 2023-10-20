@@ -15,4 +15,10 @@ data['schools'].each do |school|
  # Extract and print the list of all classes in the current school
   puts "Classes: #{school['classes'].map { |klass| klass['subject'] }.join(', ')}"
 
+
+# For each class, extract and print the list of all students
+  school['classes'].each do |klass|
+    puts "Students in #{klass['subject']}: #{klass['students'].join(', ')}"
+  end
+
 end
