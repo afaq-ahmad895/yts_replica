@@ -9,6 +9,8 @@ data['schools'].each do |school|
   # Print the school's name
   puts "School Name: #{school['name']}"
 
- 
+ # Print the list of subjects offered in the current school
+  puts "Subjects Offered in this school: #{school['classes'].map { |klass| klass['subject'] }.join(', ')}"
+
 
 end
