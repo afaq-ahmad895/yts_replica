@@ -12,5 +12,7 @@ data['schools'].each do |school|
  # Print the list of subjects offered in the current school
   puts "Subjects Offered in this school: #{school['classes'].map { |klass| klass['subject'] }.join(', ')}"
 
+ # Extract and print the list of all classes in the current school
+  puts "Classes: #{school['classes'].map { |klass| klass['subject'] }.join(', ')}"
 
 end
