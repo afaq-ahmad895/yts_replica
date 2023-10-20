@@ -27,4 +27,29 @@ data['schools'].each do |school|
   puts "Distinct Teachers: #{teachers.join(', ')}"
 
 
+# Create a hash to track teachers and their classes
+  teachers_classes = {}
+
+  # Iterate through classes in the current school
+  school['classes'].each do |klass|
+    teacher = klass['teacher']
+    subject = klass['subject']
+
+    if teachers_classes[teacher]
+      teachers_classes[teacher] << subject
+    else
+      teachers_classes[teacher] = [subject]
+    
+    end
+  end
+
+  # Identify and print teachers linked with more than one class
+  teachers_classes.each do |teacher, classes|
+    if classes.length > 1
+      puts "Teacher #{teacher} is linked with classes: #{classes.join(', ')}"
+    end
+  end
+
+
+
 end
