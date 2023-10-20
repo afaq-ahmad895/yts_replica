@@ -21,4 +21,10 @@ data['schools'].each do |school|
     puts "Students in #{klass['subject']}: #{klass['students'].join(', ')}"
   end
 
+ 
+ # Extract and print a list of distinct teachers in the current school
+  teachers = school['classes'].map { |klass| klass['teacher'] }.uniq
+  puts "Distinct Teachers: #{teachers.join(', ')}"
+
+
 end
