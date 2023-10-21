@@ -1,5 +1,6 @@
 require 'yaml'
 require 'pry'
+require "awesome_print"
 
 #binding.pry
  data = YAML.load_file('nested_array.yml')
