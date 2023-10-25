@@ -1,36 +1,33 @@
 require 'pry'
 require "awesome_print"
 require 'yaml'
-# binding.pry
-data= YAML.load_file('nested_hash_array.yml')
+
+data = YAML.load_file('nested_hash_array.yml')
+c = []
 teachers1 = []
 teachers2 = []
+
 data['schools'].each_with_index do |school, index|
+  teachers_classes = {}
+  # Extract the students and classes for the current school
+  students = school['classes'].flat_map { |klass| klass['students'] }
+  classes = school['classes']
 
-teachers_classes = {}
+  puts "#{index + 1}#{index == 0 ? 'st' : 'nd'} school name: #{school['name']}"
 
-puts "#{index + 1}#{index == 0 ? 'st' : 'nd'} school name: #{school['name']}"
-
-sum = 0
-school['classes'].each do |klass|
-  if klass['students'].is_a?(Array)
-    sum += klass['students'].length
+  # Print information for each class
+  puts "List of Classes (total #{classes.sum { |klass| klass['students'].length }} students):"
+  classes.each do |klass|
+    subject = klass['subject']
+    students = klass['students'].length
+    puts "- #{subject} (#{students})"
   end
-end
 
-#total students in wach class.
-puts "List of Classes (total #{sum} students):"
-school['classes'].each do |klass|
-  subject = klass['subject']
-  students = klass['students'].length
-  
-  puts "- #{subject} (#{students})"
-
-
-
+  # Teachers teaching more than one class
+  classes.each do |klass|
     teacher = klass['teacher']
     subject = klass['subject']
-    
+
     if teachers_classes[teacher]
       teachers_classes[teacher] << subject
     else
@@ -42,11 +39,10 @@ school['classes'].each do |klass|
     if classes.length > 1
       puts "Mr.#{teacher} is Teaching: [#{classes.join(', ')}]"
     end
+  end
 
-end
 
-
-#unique subjects offered in one school but not in other.
+  #unique subjects offered in one school but not in other.
   school_subjects = school['classes'].map { |klass| klass['subject'] }
 
   unique_subjects = school_subjects - (index == 0 ? data['schools'][1]['classes'].map { |klass| klass['subject'] }
@@ -56,9 +52,6 @@ end
    unique_subjects.each do |subject|
      puts "- #{subject}"
   end
-
-
-
 end
 
 
@@ -79,8 +72,3 @@ if common_teacher.any?
 else
   puts "No common teacher found."
 end
-
-
-
-
-
