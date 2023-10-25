@@ -12,8 +12,8 @@ data['schools'].each_with_index do |school,index|
   total_students = school['classes'].sum { |klass| klass['students'].length }
   #sum = 0
 
-  teachers_classes = {}
-
+  
+teachers_classes = {}
    puts "List of Classes (total #{total_students} students):"
   school['classes'].each do |klass|
   #Track total students
@@ -22,11 +22,12 @@ data['schools'].each_with_index do |school,index|
   # end
 
   #total students in each class.
+
   subject = klass['subject']
   students = klass['students'].length
   puts "- #{subject} (#{students})"
 
-#teacher link more than one class.
+ #teacher link more than one class.
     teacher = klass['teacher']
     subject = klass['subject']
     

@@ -8,12 +8,12 @@ schools:
           - Bob
           - Charlie
       - subject: History
-        teacher: Mr. Clark
+        teacher: Mrs. Roberts
         students:
           - David
           - Bob
       - subject: Science
-        teacher: Mrs. Roberts
+        teacher: Mr. Clark
         students:
           - Grace
           
