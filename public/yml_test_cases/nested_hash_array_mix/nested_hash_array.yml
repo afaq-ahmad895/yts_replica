@@ -11,14 +11,12 @@ schools:
         teacher: Mr. Clark
         students:
           - David
-          - Eve
-          - Frank
+          - Bob
       - subject: Science
         teacher: Mrs. Roberts
         students:
           - Grace
-          - Henry
-          - Ian
+          
 
   - name: Southside Prep
     classes:
@@ -27,16 +25,14 @@ schools:
         students:
           - Jack
           - Karen
-          - Lily
+          - Emily
       - subject: Science
         teacher: Mrs. Roberts
         students:
           - Mia
-          - Noah
-          - Olivia
+          - Bob
       - subject: Mathematics
         teacher: Dr. Adams
         students:
           - Emily
-          - James
-          - Zoe
+          

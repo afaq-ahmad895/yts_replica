@@ -1,86 +1,110 @@
 require 'pry'
 require "awesome_print"
 require 'yaml'
-
-data= YAML.load_file('nested_hash_array.yml')
-
 # binding.pry
+data= YAML.load_file('nested_hash_array.yml')
+c = [] 
 
-# Iterate through each school
-data['schools'].each do |school|
-  # Print the school's name
-  puts "School Name: #{school['name']}"
+data['schools'].each_with_index do |school, index|
 
- # Print the list of subjects offered in the current school
-  puts "Subjects Offered in this school: #{school['classes'].map { |klass| klass['subject'] }.join(', ')}"
-
-
- # Extract and print the list of all classes in the current school
-  puts "Classes: #{school['classes'].map { |klass| klass['subject'] }.join(', ')}"
-
-
- # For each class, extract and print the list of all students
+  students = []
   school['classes'].each do |klass|
-    puts "Students in #{klass['subject']}: #{klass['students'].join(', ')}"
+    students += klass['students']
   end
 
- 
- # Extract and print a list of distinct teachers in the current school
-  teachers = school['classes'].map { |klass| klass['teacher'] }.uniq
-  puts "Distinct Teachers: #{teachers.join(', ')}"
+ c += students 
+
+ puts "#{index + 1}#{index == 0 ? 'st' : 'nd'} school name: #{school['name']}"
+
+  puts "List of students(total #{students.length})->unique(#{students.uniq.length})"
 
 
- # Create a hash to track teachers and their classes
+end
+puts "total students of both school: (#{c.length} students)->unique (#{c.uniq.length})"
+
+
+puts "==================================================================================================="
+
+
+# Print school names.
+data['schools'].each_with_index do |school,index|
+puts "#{index + 1}#{index == 0 ? 'st' : 'nd'} school name: #{school['name']}"
+
+#total_students = school['classes'].sum { |klass| klass['students'].length }
+
+#sum of school students.
+sum = 0
+school['classes'].each do |klass|
+  if klass['students'].is_a?(Array)
+    sum += klass['students'].length
+  end
+end
+
+#total students in wach class.
+puts "List of Classes (total #{sum} students):"
+school['classes'].each do |klass|
+  subject = klass['subject']
+  students = klass['students'].length
+  
+  puts "- #{subject} (#{students})"
+end
+
+
+#teacher link more than one class.
   teachers_classes = {}
 
-  # Iterate through classes in the current school
   school['classes'].each do |klass|
     teacher = klass['teacher']
     subject = klass['subject']
-
+    
     if teachers_classes[teacher]
       teachers_classes[teacher] << subject
     else
       teachers_classes[teacher] = [subject]
-    
     end
   end
 
-  # Identify and print teachers linked with more than one class
   teachers_classes.each do |teacher, classes|
     if classes.length > 1
-      puts "Teacher #{teacher} is linked with classes: #{classes.join(', ')}"
+      puts "Mr.#{teacher} is Teaching: [#{classes.join(', ')}]"
     end
   end
 
 
+#unique subjects offered in one school but not in other.
+  school_subjects = school['classes'].map { |klass| klass['subject'] }
 
-# Create a hash to track teachers and their schools
-teachers_schools = {}
+  unique_subjects = school_subjects - (index == 0 ? data['schools'][1]['classes'].map { |klass| klass['subject'] }
+  : data['schools'][0]['classes'].map { |klass| klass['subject'] })
 
-# Iterate through each school
-data['schools'].each do |school|
-  # Iterate through classes in the current school
-  school['classes'].each do |klass|
-    teacher = klass['teacher']
-    school_name = school['name']
-
-    if teachers_schools[teacher]
-      teachers_schools[teacher] << school_name
-    else
-      teachers_schools[teacher] = [school_name]
-    end
+  puts "subjects only offered in #{school['name']} school not in other:"
+   unique_subjects.each do |subject|
+     puts "- #{subject}"
   end
-end
 
-# Identify and print teachers linked with more than one school
-teachers_schools.each do |teacher, schools|
-  if schools.length > 1
-    puts "Teacher #{teacher} is linked with schools: #{schools.uniq.join(', ')}"
-  end
+
+
+
 end
 
 
+#Commmon tacher linkedd more than one scchool
+teachers1 = []
+teachers2 = []
 
+data['schools'][0]['classes'].each do |klass|
+  teachers1 << klass['teacher']
+end
 
+data['schools'][1]['classes'].each do |klass|
+  teachers2 << klass['teacher']
+end
+
+common_teacher = teachers1 & teachers2
+
+if common_teacher.any?
+  puts "List of Teachers Teaching in more then One School:"
+  puts "- #{common_teacher.first}"
+else
+  puts "No common teacher found."
 end
