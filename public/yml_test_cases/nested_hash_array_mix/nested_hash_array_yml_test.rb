@@ -45,7 +45,16 @@ teachers_classes.each do |teacher, classes|
 #puts "List of Classes (total #{sum} students):"
   end 
     
+#unique subjects offered in one school but not in other.
+  school_subjects = school['classes'].map { |klass| klass['subject'] }
 
+  unique_subjects = school_subjects - (index == 0 ? data['schools'][1]['classes'].map { |klass| klass['subject'] }
+  : data['schools'][0]['classes'].map { |klass| klass['subject'] })
+
+  puts "subjects only offered in #{school['name']} school not in other:"
+   unique_subjects.each do |subject|
+     puts "- #{subject}"
+  end
 
 end 
 
