@@ -3,13 +3,15 @@ require "awesome_print"
 require 'yaml'
 
 data = YAML.load_file('nested_hash_array.yml')
+
 i = 1
 subject_in_one_school = []
 teacher_in_one_school = []
 
 data['schools'].each do |school|
 
-  puts "#{i += 1}:school name: #{school['name']}"
+  puts "#{i}:school name: #{school['name']}"
+  i += 1
   puts "List of Classes (total students):"
 
   teachers_classes = {}
@@ -23,7 +25,6 @@ data['schools'].each do |school|
     
     subject = klass['subject']
     subject_all << subject
-
 
     if teachers_classes[teacher]
       teachers_classes[teacher] << subject
