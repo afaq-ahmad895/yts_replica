@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f98eae3-c3dd-401d-bf8c-a3cdb23c3b77" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/yts_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/yts_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/yts/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/yts/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/yml_test_cases/nested_hash_array_mix/nested_hash_array_yml_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/public/yml_test_cases/nested_hash_array_mix/nested_hash_array_yml_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/yml_test_cases/t2_nested_array/nested_array_yml_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/public/yml_test_cases/t2_nested_array/nested_array_yml_test.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,23 +36,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "BB-12",
-    "last_opened_file_path": "/home/afaq/yts_replica",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "ruby.rails.projectView.checked": "true",
-    "ruby.structure.view.model.defaults.configured": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;BB-12&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/afaq/yts_replica&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Rails.yts_replica">
     <configuration name="yts_replica" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="yts_replica" />
@@ -139,6 +142,7 @@
       <workItem from="1697602489441" duration="2502000" />
       <workItem from="1697605069849" duration="95000" />
       <workItem from="1697605535584" duration="9279000" />
+      <workItem from="1698303702696" duration="1927000" />
     </task>
     <servers />
   </component>
