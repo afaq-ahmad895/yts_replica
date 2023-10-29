@@ -1,8 +1,156 @@
-name1:
-  - afaq
-  - hassan
-  - usama
-name2:
-    - fahad
-    - ali
-    - musa
+-
+  - name: Top Gun
+    rating: 8.5
+    action: Action
+    drama: Drama
+    year: 2021
+    image: image/Top_Gun.jpg
+  - name: Jungle Cruise
+    rating: 7.9
+    action: Adventure
+    drama: Fantasy
+    year: 2022
+    image: image/jungle.jpeg
+  - name: Black Panther
+    rating: 9.2
+    action: aquaman.webp
+    drama: Mystery
+    year: 2023
+    image: image/blackpanther.jpg
+  - name: Scream
+    rating: 6.8
+    action: Suspense
+    drama: Mystery
+    year: 2024
+    image: image/blade.webp
+  - name: Children of The Corn
+    rating: 8.0
+    action: Thriller
+    drama: Horror
+    year: 2025
+    image: image/children.jpg
+-
+  - name: Fast and Furious
+    rating: 8.5
+    action: Action
+    drama: Drama
+    year: 2021
+    image: image/fast.jpg
+  - name: Haunted Mansion
+    rating: 7.9
+    action: Mystery
+    drama: Horror
+    year: 2022
+    image: image/horror.jpeg
+  - name: Saw X
+    rating: 9.2
+    action: Mystery
+    drama: Mystery
+    year: 2023
+    image: image/horror.webp
+  - name: The Hulk
+    rating: 6.8
+    action: Sci-Fiction
+    drama: Mystery
+    year: 2024
+    image: image/hulk.jpeg
+  - name: Jungle Cruise
+    rating: 8.0
+    action: Thriller
+    drama: Horror
+    year: 2025
+    image: image/jungle.jpeg
+-
+  - name: Morbius
+    rating: 8.5
+    action: Action
+    drama: Drama
+    year: 2022
+    image: image/morbius.webp
+  - name: The Night
+    rating: 7.9
+    action: Adventure
+    drama: Fantasy
+    year: 2023
+    image: image/night.jpeg
+  - name: The Nun
+    rating: 9.2
+    action: Sci-Fi
+    drama: Mystery
+    year: 2018
+    image: image/nun.webp
+  - name: Shazam
+    rating: 6.8
+    action: Suspense
+    drama: Mystery
+    year: 2019
+    image: image/shazam.jpeg
+  - name: Stealth
+    rating: 8.0
+    action: Thriller
+    drama: Horror
+    year: 2020
+    image: image/stealth.jpg
+-
+  - name: Talk to me
+    rating: 8.5
+    action: Action
+    drama: Drama
+    year: 2021
+    image: image/talktome.jpg
+  - name: Jungle Cruise
+    rating: 7.9
+    action: Adventure
+    drama: Fantasy
+    year: 2022
+    image: image/jungle.jpeg
+  - name: Avatar
+    rating: 9.2
+    action: Sci-Fi
+    drama: Mystery
+    year: 2023
+    image: image/avatar.jpeg
+  - name: Scream
+    rating: 6.8
+    action: Suspense
+    drama: Mystery
+    year: 2024
+    image: image/scream.jpg
+  - name: Anabella
+    rating: 8.0
+    action: Thriller
+    drama: Horror
+    year: 2025
+    image: image/anabella.jpg
+-
+  - name: Deliver Us
+    rating: 8.5
+    action: Action
+    drama: Suspense
+    year: 2026
+    image: image/horror2.jpeg
+  - name: Dead pool
+    rating: 7.9
+    action: Adventure
+    drama: Drama
+    year: 2027
+    image: image/action1.jpeg
+  - name: Extraction
+    rating: 9.2
+    action: Sci-Fi
+    drama: Mystery
+    year: 2028
+    image: image/action3.jpeg
+  - name: Uncharted
+    rating: 6.8
+    action: Suspense
+    drama: Mystery
+    year: 2029
+    image: image/action4.jpeg
+  - name: Adam Driver
+    rating: 8.0
+    action: Thriller
+    drama: Horror
+    year: 2030
+    image: image/adam.jpeg
+  
