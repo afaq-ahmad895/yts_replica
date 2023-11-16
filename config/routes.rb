@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'demo/index'
   get 'products/index'
   root 'yts#index'
   get 'yts/index'
+  get 'yts/index1'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 

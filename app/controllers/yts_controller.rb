@@ -1,3 +1,4 @@
+#require 'rest-client'
 class YtsController < ApplicationController
   def index
     @movie_rows = YAML.load_file(Rails.root.join('config', 'movies.yml'))
@@ -23,6 +24,8 @@ class YtsController < ApplicationController
       end
     end
   end
+
+
 end
 
 

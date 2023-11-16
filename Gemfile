@@ -28,7 +28,8 @@ gem 'awesome_print', '~> 1.9', '>= 1.9.2'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'httparty', '~> 0.13.7'
+gem 'rest-client'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
