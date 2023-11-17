@@ -1,0 +1,11 @@
+<h1> M Nam khan</h1>
+<!--<%# binding.pry %>>-->
+<% @movie_list.each do |movie_row| %>
+  <br>
+
+  <% movie_row.each do |movie| %>
+    <li>
+     <%= movie['name'] %>
+    </li>
+  <%end %>
+<% end %>

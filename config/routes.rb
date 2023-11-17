@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   root 'yts#index'
   get 'yts/index'
+  get 'yts/movies_list'
+  get 'yts/movie_100_top'
+  get 'yts/movie_api'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # for movie_api new functin k liye
 end

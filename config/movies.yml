@@ -1,11 +1,11 @@
--
-  - name: Top Gun
+---
+- - name: Top Gun
     rating: 8.5
     action: Action
     drama: Drama
     year: 2021
     image: image/Top_Gun.jpg
-  - name: Jungle Cruise
+  - name: Spiderman
     rating: 7.9
     action: Adventure
     drama: Fantasy
@@ -29,8 +29,7 @@
     drama: Horror
     year: 2025
     image: image/children.jpg
--
-  - name: Fast and Furious
+- - name: Fast and Furious
     rating: 8.5
     action: Action
     drama: Drama
@@ -54,14 +53,13 @@
     drama: Mystery
     year: 2024
     image: image/hulk.jpeg
-  - name: Jungle Cruise
+  - name: Spiderman
     rating: 8.0
     action: Thriller
     drama: Horror
     year: 2025
     image: image/jungle.jpeg
--
-  - name: Morbius
+- - name: Morbius
     rating: 8.5
     action: Action
     drama: Drama
@@ -91,14 +89,13 @@
     drama: Horror
     year: 2020
     image: image/stealth.jpg
--
-  - name: Talk to me
+- - name: Talk to me
     rating: 8.5
     action: Action
     drama: Drama
     year: 2021
     image: image/talktome.jpg
-  - name: Jungle Cruise
+  - name: Spiderman
     rating: 7.9
     action: Adventure
     drama: Fantasy
@@ -122,8 +119,7 @@
     drama: Horror
     year: 2025
     image: image/anabella.jpg
--
-  - name: Deliver Us
+- - name: Deliver Us
     rating: 8.5
     action: Action
     drama: Suspense
@@ -153,4 +149,3 @@
     drama: Horror
     year: 2030
     image: image/adam.jpeg
-  
