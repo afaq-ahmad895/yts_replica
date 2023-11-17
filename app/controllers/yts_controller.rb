@@ -1,7 +1,9 @@
 class YtsController < ApplicationController
-#   def index
-#     @movie_rows = YAML.load_file(Rails.root.join('config', 'movies.yml'))
-#
+
+  def index2
+     @movie_rows = YAML.load_file(Rails.root.join('config', 'movies.yml'))
+    end
+
 #     respond_to do |format|
 #       format.html
 #       format.json do
@@ -66,7 +68,6 @@ def index1
     'X-RapidAPI-Host' => 'imdb-top-100-movies.p.rapidapi.com',
     'X-RapidAPI-Key' => 'f6ff2a97ddmsh3bfc487a7c31997p1cbcddjsne36ba0d71576'
   })
-  @movies = JSON.parse(response.body)
-  # @movies = JSON.parse(response.body)
+  @movies_row = JSON.parse(response.body)
 end
 end

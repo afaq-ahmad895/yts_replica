@@ -79,17 +79,19 @@
   </div>
   <hr>
 
-  <% @movies.each do |movie| %>
+
+  <% @movies_row.in_groups_of(5, false) do |row| %>
+
     <div class="movies_box">
 
+      <% row.compact.each do |movie| %>
         <div class="movies_card">
 
           <div class="movies_image">
             <div class="hover">
               <i class="fa-solid fa-star"></i>
-              <p class="rate"><%= movie['rating'] %></p>
-              <p class="categories"><%= movie['action'] %></p>
-              <p class="categories"><%= movie['drama'] %></p>
+             <p class="rate"><%= movie['rating'] %></p>
+              <p class="categories"><%= movie['genre'] %></p>
               <a href="#" class="btn">View Details</a>
             </div>
             <%= image_tag movie['image'] %>
@@ -100,9 +102,37 @@
             <p class="year"><%= movie['year'] %></p>
           </div>
         </div>
-
-    </div>
   <% end %>
+    </div>
+
+  <% end %>
+
+
+  <%# @movies_row.each_slice(5) do |movies| %>
+<!--    <div class="row">-->
+      <%# movies.each do |movie| %>
+<!--        <div class="movies_box">-->
+<!--          <div class="movies_card">-->
+<!--            <div class="movies_image">-->
+<!--              <div class="hover">-->
+<!--                <i class="fa-solid fa-star"></i>-->
+<!--                <p class="rate"><%#= movie['rating'] %></p>-->
+<!--                <p class="categories"><%#= movie['action'] %></p>-->
+<!--                <p class="categories"><%#= movie['drama'] %></p>-->
+<!--                <a href="#" class="btn">View Details</a>-->
+<!--              </div>-->
+              <%#= image_tag movie['image'] %>
+<!--            </div>-->
+
+<!--            <div class="text">-->
+<!--              <p class="name"><%#= movie['name'] %></p>-->
+<!--              <p class="year"><%#= movie['year'] %></p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+      <%# end %>
+<!--    </div>-->
+  <%# end %>
 
 
 
