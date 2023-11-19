@@ -71,14 +71,22 @@ class YtsController < ApplicationController
   })
   @movies_row = JSON.parse(response.body)
 end
-  
+
   def search
+     movie_id = params[:movie_id]
     response = HTTParty.get('https://imdb-top-100-movies.p.rapidapi.com/top22', headers: {
       'X-RapidAPI-Host' => 'imdb-top-100-movies.p.rapidapi.com',
       'X-RapidAPI-Key' => '7a15c90dfbmsh27f1e2e871c0f21p1c7c11jsn784ee34a2303'
     })
+    @movie_detail = JSON.parse(response.body)
 
-    @movie_row = JSON.parse(response.body)
+    # response = HTTParty.get("https://imdb-top-100-movies.p.rapidapi.com/movieDetails/#{movie_id}", headers: {
+    #   'X-RapidAPI-Host' => 'imdb-top-100-movies.p.rapidapi.com',
+    #   'X-RapidAPI-Key' => '7a15c90dfbmsh27f1e2e871c0f21p1c7c11jsn784ee34a2303'
+    # })
+    #
+    # @movie_detail = JSON.parse(response.body)
+
   end
   
 

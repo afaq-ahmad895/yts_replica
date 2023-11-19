@@ -31,37 +31,53 @@
 
   <nav>
 
-    <div class="left_warpper">
-      <img src="<%= asset_path('image/logo-YTS.svg') %>">
+  <%= form_tag(search_path, method: :get) do %>
+      <%= label_tag :movie_id, 'Enter Movie ID:' %>
+      <%= text_field_tag :movie_id %>
+      <%= submit_tag 'Search' %>
+    <% end %>
 
-      <p>HD movies at the smallest file size.</p>
-    </div>
+    <%#= form_for :movie, url: search_path, method: :get do |f| %>
+      <%#= f.label :movie_id, 'Enter Movie ID:' %>
+      <%#= f.text_field :movie_id, class: 'form-control' %>
+      <%#= f.submit 'Search', class: 'btn btn-primary' %>
+    <%# end %>
 
-    <div class="right_warpper">
 
-      <div class="search_bar">
 
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Quick search">
+    <!--    <div class="left_warpper">-->
+<!--      <img src="<%#= asset_path('image/logo-YTS.svg') %>">-->
 
-      </div>
+<!--      <p>HD movies at the smallest file size.</p>-->
+<!--    </div>-->
 
-      <!--
-      <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#" class="active">4K</a></li>
-          <li><a href="#">Trending</a></li>
-          <li><a href="#">Browse Movies</a></li>
-      </ul>
-      -->
+<!--    <div class="right_warpper">-->
 
-      <div class="login">
-        <p>Login</p>
-        <p class="down">|</p>
-        <p>Register</p>
-      </div>
+<!--      <div class="search_bar">-->
 
-    </div>
+<!--        <i class="fa-solid fa-magnifying-glass"></i>-->
+<!--        <input type="text" placeholder="Quick search">-->
+
+
+
+<!--      </div>-->
+
+<!--            <ul>-->
+<!--          <li><a href="#">Home</a></li>-->
+<!--          <li><a href="#" class="active">4K</a></li>-->
+<!--          <li><a href="#">Trending</a></li>-->
+<!--          <li><a href="#">Browse Movies</a></li>-->
+<!--      </ul>-->
+
+
+<!--      <div class="login">-->
+<!--        <p>Login</p>-->
+<!--        <p class="down">|</p>-->
+<!--        <p>Register</p>-->
+<!--      </div>-->
+
+<!--    </div>-->
+    <%#= link_to 'Search Movie', search_path %>
 
   </nav>
 
