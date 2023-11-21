@@ -1,0 +1,140 @@
+<!--<h1>Top 42 Movies</h1>-->
+
+<%#  @movies_row1.each do |movie| %>
+<!--<li>-->
+<%#= movie['title'] %>
+  <%#= movie['genres'] %>
+  <%#= movie['release_date'] %>
+  <%#= movie['poster_path'] %>
+  <%#= image_tag movie['poster_path'] %>
+<!--</li>-->
+<%# end %>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>title - The Official Home of YIFY Movies Torrent Download - YTS</title>
+
+  <link rel="short icon" href="app/assets/images/image/short_icon.png">
+  <link rel="stylesheet" href="app/assets/stylesheets/style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+<section>
+
+  <nav>
+
+    <%= form_tag(search_path, method: :get) do %>
+    <%= label_tag :movie_id, 'Enter Movie ID:' %>
+    <%= text_field_tag :movie_id %>
+    <%= submit_tag 'Search' %>
+    <% end %>
+
+    <%#= form_for :movie, url: search_path, method: :get do |f| %>
+    <%#= f.label :movie_id, 'Enter Movie ID:' %>
+    <%#= f.text_field :movie_id, class: 'form-control' %>
+    <%#= f.submit 'Search', class: 'btn btn-primary' %>
+    <%# end %>
+
+
+
+<!--        <div class="left_warpper">-->
+<!--          <img src="<%#= asset_path('image/logo-YTS.svg') %>">-->
+
+<!--          <p>HD movies at the smallest file size.</p>-->
+<!--        </div>-->
+
+<!--        <div class="right_warpper">-->
+
+<!--          <div class="search_bar">-->
+
+<!--            <i class="fa-solid fa-magnifying-glass"></i>-->
+<!--            <input type="text" placeholder="Quick search">-->
+
+
+
+<!--          </div>-->
+
+<!--                <ul>-->
+<!--              <li><a href="#">Home</a></li>-->
+<!--              <li><a href="#" class="active">4K</a></li>-->
+<!--              <li><a href="#">Trending</a></li>-->
+<!--              <li><a href="#">Browse Movies</a></li>-->
+<!--          </ul>-->
+
+
+<!--          <div class="login">-->
+<!--            <p>Login</p>-->
+<!--            <p class="down">|</p>-->
+<!--            <p>Register</p>-->
+<!--          </div>-->
+
+<!--        </div>-->
+    <%#= link_to 'Search Movie', search_path %>
+
+  </nav>
+
+
+
+  <div class="main">
+
+    <h1>Download YTS YIFY movies: HD smallest size</h1>
+    <p>
+      Welcome to the official YTS.MX (.LT) website.
+      Here you can browse and download YIFY movies in excellent 720p,
+      1080p, 2160p 4K and 3D quality, all at the smallest file size.
+      YTS Movies Torrents.
+    </p>
+
+
+  </div>
+  <hr>
+
+
+  <% @movies_row1.in_groups_of(5, false) do |row| %>
+    <div class="movies_box">
+
+      <% row.compact.each do |movie| %>
+
+        <div class="movies_card">
+
+          <div class="movies_image">
+            <div class="hover">
+              <i class="fa-solid fa-star"></i>
+              <p class="rate"><%= movie['rating'] %></p>
+              <p class="categories"><%= movie['genres'] %></p>
+              <a href="#" class="btn">View Details</a>
+            </div>
+            <%= image_tag movie['poster_path'] %>
+
+          </div>
+
+          <div class="text">
+            <p class="name"><%= movie['title'] %></p>
+            <p class="year"><%= movie['release_date'] %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  <% end %>
+
+</section>
+
+
+
+
+</body>
+
+</html>
