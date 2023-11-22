@@ -96,6 +96,6 @@ class YtsController < ApplicationController
      render 'search.html.erb'
   end
 
-  
+
 
 end
