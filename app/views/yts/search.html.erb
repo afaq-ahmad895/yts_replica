@@ -44,11 +44,11 @@
 
   <nav>
 
-    <%#= form_tag(search_path, method: :get) do %>
-      <%#= label_tag :movie_id, 'Enter Movie ID:' %>
-      <%#= text_field_tag :movie_id %>
-      <%#= submit_tag 'Search' %>
-    <%# end %>
+    <%= form_tag(search_path, method: :get) do %>
+      <%= label_tag :movie_id, 'Enter Movie ID:' %>
+      <%= text_field_tag :movie_id %>
+      <%= submit_tag 'Search' %>
+    <% end %>
 
     <%#= form_for :movie, url: search_path, method: :get do |f| %>
     <%#= f.label :movie_id, 'Enter Movie ID:' %>
