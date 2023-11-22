@@ -1,9 +1,9 @@
 require 'pry'
 class YtsController < ApplicationController
 
-  def index2
-     @movie_rows = YAML.load_file(Rails.root.join('config', 'movies.yml'))
-    end
+  # def index2
+  #    @movie_rows = YAML.load_file(Rails.root.join('config', 'movies.yml'))
+  #   end
 
 #     respond_to do |format|
 #       format.html
@@ -65,13 +65,13 @@ class YtsController < ApplicationController
 # include HTTParty
 # require 'httparty'
   
-  def index1
-  response = HTTParty.get('https://imdb-top-100-movies.p.rapidapi.com/', headers: {
-    'X-RapidAPI-Host' => 'imdb-top-100-movies.p.rapidapi.com',
-    'X-RapidAPI-Key' => '7a15c90dfbmsh27f1e2e871c0f21p1c7c11jsn784ee34a2303'
-  })
-  @movies_row = JSON.parse(response.body)
-end
+#   def index1
+#   response = HTTParty.get('https://imdb-top-100-movies.p.rapidapi.com/', headers: {
+#     'X-RapidAPI-Host' => 'imdb-top-100-movies.p.rapidapi.com',
+#     'X-RapidAPI-Key' => '7a15c90dfbmsh27f1e2e871c0f21p1c7c11jsn784ee34a2303'
+#   })
+#   @movies_row = JSON.parse(response.body)
+# end
 
 
   def index3
@@ -86,27 +86,16 @@ end
 
 
   def search
-    response = HTTParty.get('https://movies-api14.p.rapidapi.com/search?query=breaking%20bad', headers: {
+
+     movie_id = params[:movie_id]
+    response = HTTParty.get("https://movies-api14.p.rapidapi.com/search?query=#{movie_id}", headers: {
       'X-RapidAPI-Host' => 'movies-api14.p.rapidapi.com',
       'X-RapidAPI-Key' => '7a15c90dfbmsh27f1e2e871c0f21p1c7c11jsn784ee34a2303'
     })
     @movie_detail = JSON.parse(response.body)['contents']
-
+     render 'search.html.erb'
   end
 
-
-
-  def search1
-    movie_id = params[:movie_id]
-    response = HTTParty.get("https://movies-api14.p.rapidapi.com/search?query=#{@movie_id}", headers: {
-      'X-RapidAPI-Host' => 'movies-api14.p.rapidapi.com',
-      'X-RapidAPI-Key' => '7a15c90dfbmsh27f1e2e871c0f21p1c7c11jsn784ee34a2303'
-    })
-
-    @movie_detail = JSON.parse(response.body)['contents']
-    render 'search.html.erb'
-  end
-
-
+  
 
 end
