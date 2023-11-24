@@ -97,9 +97,9 @@
   </div>
   <hr>
 
-
+ <%# binding.pry %>
   <% @movies_row.in_groups_of(5, false) do |row| %>
-  <%# @movies_row.each do |row| %>
+
     <div class="movies_box">
 
       <% row.compact.each do |movie| %>
@@ -110,28 +110,11 @@
               <i class="fa-solid fa-star"></i>
              <p class="rate"><%= movie['rating'] %></p>
               <p class="categories"><%= movie['genre'] %></p>
-
-
-              <%#= form_with(url: movie_detail_path, method: :get) do |f| %>
-                <%#= f.hidden_field :movie_id, value: movie['id']  %>
-
-                <%#= f.button type: "Submit", class: "btn" %>
-              <%# end %>
-
-              <%#= form_with(url: movie_detail_path, method: :get) do |f| %>
-                <%#= f.hidden_field :movie_id, value: movie['id'] %>
-                <%#= f.button type:"View Detail", class: "btn" %>
-              <%# end %>
-
-              <%= form_with(url: movie_detail_path, method: :get) do |f| %>
+              <%= form_with(url: movie_detail_path, method: :get, local: true) do |f| %>
                 <%= f.hidden_field :movie_id, value: movie['id']  %>
                 <%= button_tag "View Detail", type: "submit", class: "btn" %>
               <% end %>
-
-
-
-
-              <!--              <a href="<%#= movie_detail_path %>" class="btn">View Details</a>-->
+              <%#= button_to "View Detail", movie_detail_path, method: :get, params: { movie_id: movie['id'] }, class: "btn", local: true %>
 
             </div>
             <%= image_tag movie['image'] %>
