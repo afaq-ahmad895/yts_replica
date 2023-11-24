@@ -96,15 +96,12 @@
 
   </div>
   <hr>
-
- <%# binding.pry %>
+<%# binding.pry %>
+  <% if @movies_row.present? %>
   <% @movies_row.in_groups_of(5, false) do |row| %>
-
     <div class="movies_box">
-
       <% row.compact.each do |movie| %>
         <div class="movies_card">
-
           <div class="movies_image">
             <div class="hover">
               <i class="fa-solid fa-star"></i>
@@ -115,7 +112,6 @@
                 <%= button_tag "View Detail", type: "submit", class: "btn" %>
               <% end %>
               <%#= button_to "View Detail", movie_detail_path, method: :get, params: { movie_id: movie['id'] }, class: "btn", local: true %>
-
             </div>
             <%= image_tag movie['image'] %>
           </div>
@@ -127,10 +123,12 @@
         </div>
   <% end %>
     </div>
-
   <% end %>
 
-
+  <% else %>
+ <h2> <%= flash[:error] %> </h2>
+  <% end %>
+  <%# binding.pry %>
 </section>
 
 
