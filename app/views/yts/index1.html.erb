@@ -29,7 +29,7 @@
 
 <section>
 
-  <nav>
+<!--  <nav>-->
 
   <%#= form_tag(search_path, method: :get) do %>
       <%#= label_tag :movie_id, 'Enter Movie ID:' %>
@@ -45,8 +45,8 @@
 
 
 
-    <!--    <div class="left_warpper">-->
-<!--      <img src="<%#= asset_path('image/logo-YTS.svg') %>">-->
+<!--        <div class="left_warpper">-->
+<!--    <img src="<%##= asset_path('image/logo-YTS.svg') %>">-->
 
 <!--      <p>HD movies at the smallest file size.</p>-->
 <!--    </div>-->
@@ -60,7 +60,7 @@
 
 
 
-<!--      </div>-->
+<!--     </div>-->
 
 <!--            <ul>-->
 <!--          <li><a href="#">Home</a></li>-->
@@ -79,7 +79,7 @@
 <!--    </div>-->
     <%#= link_to 'Search Movie', search_path %>
 
-  </nav>
+<!--  </nav>-->
 
 
 
@@ -99,7 +99,7 @@
 
 
   <% @movies_row.in_groups_of(5, false) do |row| %>
-
+  <%# @movies_row.each do |row| %>
     <div class="movies_box">
 
       <% row.compact.each do |movie| %>
@@ -110,7 +110,29 @@
               <i class="fa-solid fa-star"></i>
              <p class="rate"><%= movie['rating'] %></p>
               <p class="categories"><%= movie['genre'] %></p>
-              <a href="#" class="btn">View Details</a>
+
+
+              <%#= form_with(url: movie_detail_path, method: :get) do |f| %>
+                <%#= f.hidden_field :movie_id, value: movie['id']  %>
+
+                <%#= f.button type: "Submit", class: "btn" %>
+              <%# end %>
+
+              <%#= form_with(url: movie_detail_path, method: :get) do |f| %>
+                <%#= f.hidden_field :movie_id, value: movie['id'] %>
+                <%#= f.button type:"View Detail", class: "btn" %>
+              <%# end %>
+
+              <%= form_with(url: movie_detail_path, method: :get) do |f| %>
+                <%= f.hidden_field :movie_id, value: movie['id']  %>
+                <%= button_tag "View Detail", type: "submit", class: "btn" %>
+              <% end %>
+
+
+
+
+              <!--              <a href="<%#= movie_detail_path %>" class="btn">View Details</a>-->
+
             </div>
             <%= image_tag movie['image'] %>
           </div>

@@ -12,5 +12,8 @@ Rails.application.routes.draw do
  # get '/search1', to: 'yts#search1'
   get 'yts/index3'
 
+  get 'yts/movie_detail'
+  get '/movie_detail', to: 'yts#movie_detail'
 
+ #post '/movie_detail', to: 'yts#movie_detail'
 end

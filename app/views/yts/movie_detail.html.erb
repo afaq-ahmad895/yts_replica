@@ -1,0 +1,23 @@
+<h1>Complete Movie Detail</h1>
+
+<%# binding.pry %>
+<div>
+  <h1>Title:<%= @movie_detail['title'] %></h1>
+  <br>
+  <h4>Description:<%= @movie_detail['description'] %></h4>
+  <br>
+  <img src="<%= @movie_detail["image"] %>">
+  <br>
+
+  <h5>Genre: <%= @movie_detail['genre'] %></h5>
+  <br>
+  <h5>Rating: <%= @movie_detail['rating'] %></h5>
+  <br>
+  <h5>Id: <%= @movie_detail['id'] %></h5>
+  <br>
+  <h5>Director: <%= @movie_detail['director'] %></h5>
+  <br>
+  <h5>Writers: <%= @movie_detail['writers'] %></h5>
+</div>
+
+<%# binding.pry %>
