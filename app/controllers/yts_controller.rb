@@ -66,12 +66,12 @@ class YtsController < ApplicationController
 # require 'httparty'
   
   def index1
-
+    #IMD movies show all movies on index and click on specific movies to see each movie detail info
   response = HTTParty.get('https://imdb-top-100-movies.p.rapidapi.com/', headers: {
     'X-RapidAPI-Host' => 'imdb-top-100-movies.p.rapidapi.com',
-    'X-RapidAPI-Key' => '0ff3804f9dmshbd7539cf8e614edp154537jsn24369e001e86'
+    'X-RapidAPI-Key' => '7ee01c357emsh3892df9eb9ca455p10bcd4jsnf4afb76cfd94 '
   })
-  # 7ee01c357emsh3892df9eb9ca455p10bcd4jsnf4afb76cfd94 new api 
+  # 7ee01c357emsh3892df9eb9ca455p10bcd4jsnf4afb76cfd94 new api
   # @movies_row = JSON.parse(response.body)
   # binding.pry
 
@@ -110,6 +110,7 @@ def movie_detail
 
 
   def index3
+    #movies api show all movies on index and search the individual movie 
     response = HTTParty.get('https://movies-api14.p.rapidapi.com/movies', headers: {
       'X-RapidAPI-Host' => 'movies-api14.p.rapidapi.com',
       'X-RapidAPI-Key' => '7a15c90dfbmsh27f1e2e871c0f21p1c7c11jsn784ee34a2303'
