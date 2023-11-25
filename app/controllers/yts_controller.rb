@@ -1,9 +1,9 @@
 require 'pry'
 class YtsController < ApplicationController
 
-  # def index2
-  #    @movie_rows = YAML.load_file(Rails.root.join('config', 'movies.yml'))
-  #   end
+  def index2
+     @movie_rows = YAML.load_file(Rails.root.join('config', 'movies.yml'))
+    end
 
 #     respond_to do |format|
 #       format.html
@@ -110,7 +110,7 @@ def movie_detail
 
 
   def index3
-    #movies api show all movies on index and search the individual movie 
+    #movies api show all movies on index and search the individual movie
     response = HTTParty.get('https://movies-api14.p.rapidapi.com/movies', headers: {
       'X-RapidAPI-Host' => 'movies-api14.p.rapidapi.com',
       'X-RapidAPI-Key' => '7a15c90dfbmsh27f1e2e871c0f21p1c7c11jsn784ee34a2303'
