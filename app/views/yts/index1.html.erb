@@ -126,7 +126,8 @@
   <% end %>
 
   <% else %>
- <h2> <%= flash[:error] %> </h2>
+<!-- <h2> <%#= flash[:error] %> </h2>-->
+    <h2> <%= @error_api  %> </h2>
   <% end %>
   <%# binding.pry %>
 </section>

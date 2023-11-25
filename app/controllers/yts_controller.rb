@@ -71,14 +71,15 @@ class YtsController < ApplicationController
     'X-RapidAPI-Host' => 'imdb-top-100-movies.p.rapidapi.com',
     'X-RapidAPI-Key' => '0ff3804f9dmshbd7539cf8e614edp154537jsn24369e001e86'
   })
-
+  # 7ee01c357emsh3892df9eb9ca455p10bcd4jsnf4afb76cfd94 new api 
   # @movies_row = JSON.parse(response.body)
   # binding.pry
 
   if response.code == 200
     @movies_row = JSON.parse(response.body)
   else
-    flash[:error] = JSON.parse(response.body)['message']
+    # flash[:error] = JSON.parse(response.body)['message']
+    @error_api = JSON.parse(response.body)['message']
   end
 end
 
@@ -87,7 +88,7 @@ def movie_detail
   update_by = params[:movie_id]
     response = HTTParty.get("https://imdb-top-100-movies.p.rapidapi.com/#{update_by}", headers: {
       'X-RapidAPI-Host' => 'imdb-top-100-movies.p.rapidapi.com',
-      'X-RapidAPI-Key' => '0ff3804f9dmshbd7539cf8e614edp154537jsn24369e001e86'
+      'X-RapidAPI-Key' => '7ee01c357emsh3892df9eb9ca455p10bcd4jsnf4afb76cfd94'
     })
     @movie_detail = JSON.parse(response.body)
 

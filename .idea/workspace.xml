@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f27a4d-587b-4c69-a0f1-05f340566551" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_11_23_10_55_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_11_23_10_55_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/yts_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/yts_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/yts/index1.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/yts/index1.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/yts/movie_detail.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/yts/movie_detail.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +270,7 @@
       <option name="presentableId" value="Default" />
       <updated>1700029947070</updated>
       <workItem from="1700029969355" duration="33130000" />
-      <workItem from="1700669219970" duration="72013000" />
+      <workItem from="1700669219970" duration="74900000" />
     </task>
     <servers />
   </component>
