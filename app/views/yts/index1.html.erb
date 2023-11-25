@@ -29,7 +29,7 @@
 
 <section>
 
-  <nav>
+<!--  <nav>-->
 
   <%#= form_tag(search_path, method: :get) do %>
       <%#= label_tag :movie_id, 'Enter Movie ID:' %>
@@ -45,8 +45,8 @@
 
 
 
-    <!--    <div class="left_warpper">-->
-<!--      <img src="<%#= asset_path('image/logo-YTS.svg') %>">-->
+<!--        <div class="left_warpper">-->
+<!--    <img src="<%##= asset_path('image/logo-YTS.svg') %>">-->
 
 <!--      <p>HD movies at the smallest file size.</p>-->
 <!--    </div>-->
@@ -60,7 +60,7 @@
 
 
 
-<!--      </div>-->
+<!--     </div>-->
 
 <!--            <ul>-->
 <!--          <li><a href="#">Home</a></li>-->
@@ -79,7 +79,7 @@
 <!--    </div>-->
     <%#= link_to 'Search Movie', search_path %>
 
-  </nav>
+<!--  </nav>-->
 
 
 
@@ -96,21 +96,22 @@
 
   </div>
   <hr>
-
-
+<%# binding.pry %>
+  <% if @movies_row.present? %>
   <% @movies_row.in_groups_of(5, false) do |row| %>
-
     <div class="movies_box">
-
       <% row.compact.each do |movie| %>
         <div class="movies_card">
-
           <div class="movies_image">
             <div class="hover">
               <i class="fa-solid fa-star"></i>
              <p class="rate"><%= movie['rating'] %></p>
               <p class="categories"><%= movie['genre'] %></p>
-              <a href="#" class="btn">View Details</a>
+              <%= form_with(url: movie_detail_path, method: :get, local: true) do |f| %>
+                <%= f.hidden_field :movie_id, value: movie['id']  %>
+                <%= button_tag "View Detail", type: "submit", class: "btn" %>
+              <% end %>
+              <%#= button_to "View Detail", movie_detail_path, method: :get, params: { movie_id: movie['id'] }, class: "btn", local: true %>
             </div>
             <%= image_tag movie['image'] %>
           </div>
@@ -122,10 +123,13 @@
         </div>
   <% end %>
     </div>
-
   <% end %>
 
-
+  <% else %>
+<!-- <h2> <%#= flash[:error] %> </h2>-->
+    <h2> <%= @error_api  %> </h2>
+  <% end %>
+  <%# binding.pry %>
 </section>
 
 
