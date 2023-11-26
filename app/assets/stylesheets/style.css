@@ -332,6 +332,7 @@ section .add .add_box .add_card .add_img img{
 }
 
 section .add .add_box .add_card h3 , p{
-    color: #fff;
+    /*color: #fff;*/
+    color: #020202
     margin-top: 3px;
 }

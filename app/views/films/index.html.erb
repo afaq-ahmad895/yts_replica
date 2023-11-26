@@ -64,19 +64,14 @@
             </p>
 
         </div>
-      <%= link_to "Add Movie",  yts_new_path  %>
 
 
-      <h1>All Movies</h1>
-      <% @movie.each do |m|%>
-        <div class="jumbotron">
-          <h3><%=m.title%></h3>
-          <p><%=m.year%></p>
-          <p><%=m.genre%></p>
-          <p><%=m.rating%></p>
-        </div>
-        <% end %>
+
+
 <hr>
+
+
+
 
           <%# @movie_rows.each do |row| %>
 <!--            <div class="movies_box">-->
@@ -105,18 +100,20 @@
 
 <!--              </div>-->
           <%# end %>
-
-
-
-
-
-
-
-
     </section>
 
 
+    <%= link_to "Add Movie",  films_new_path, class: 'btn' %>
 
+    <h1>All Movies</h1>
+    <% @movie.each do |m|%>
+  <div class="jumbotron">
+    <h3><%=m.title%></h3>
+    <p><%=m.year%></p>
+    <p><%=m.genre%></p>
+    <p><%=m.rating%></p>
+  </div>
+<% end %>
 
 </body>
 

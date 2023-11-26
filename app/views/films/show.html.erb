@@ -1,0 +1,11 @@
+
+<%= link_to "Back To Index", films_index_path %>
+  <h2><%=@movie.title%></h2>
+  <p><%=@movie.year%></p>
+  <p><%=@movie.genre%></p>
+  <p><%=@movie.rating%></p>
+
+
+
+  <%= link_to "Edit", edit_film_path(@movie) %>
+<%= link_to "Delete", film_path(@movie), method: :delete, data: {confirm:'Are you sure?'} %>
