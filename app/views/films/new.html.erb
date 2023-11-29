@@ -2,6 +2,11 @@
 
 <%= form_for(:film, url: films_path) do |f| %>
 
+  <% if @movie.errors.any? %>
+    <% @movie.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"> <%= msg %> </div>
+    <% end %>
+  <% end %>
 
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -15,5 +20,9 @@
   <%= f.label :rating %>
   <%= f.number_field :rating %>
 <br><br>
+
+  <%= f.file_field :movie %>
+
+  <br><br>
   <%= f.submit %>
 <% end %>

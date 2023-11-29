@@ -7,13 +7,13 @@ class FilmsController < ApplicationController
 
   def new
 
-    # @movie=Film.new
+     @movie=Film.new
   end
 
 
   def create
     @movie = Film.new(movie_params)
-
+       # @movie.movie.attach(params[:movie])
     if @movie.save
       flash[:notice]="Movie created successfully"
       redirect_to @movie
@@ -43,6 +43,7 @@ class FilmsController < ApplicationController
   def destroy
     @movie=Film.find(params[:id])
     @movie.destroy
+    flash[:notice]="Movie deleted successfully"
     redirect_to films_path
   end
 
@@ -50,7 +51,7 @@ class FilmsController < ApplicationController
   private
 
   def movie_params
-    params.require(:film).permit(:title, :year, :genre, :rating)
+    params.require(:film).permit(:title, :year, :genre, :rating, :movie)
   end
 
 end

@@ -17,22 +17,22 @@
 
 <body>
 
-    <section>
+<!--    <section>-->
 
-        <nav>
+<!--        <nav>-->
 
-            <div class="left_warpper">
-            <img src="<%= asset_path('image/logo-YTS.svg') %>">
+<!--            <div class="left_warpper">-->
+<!--            <img src="<%#= asset_path('image/logo-YTS.svg') %>">-->
                 
-                <p>HD movies at the smallest file size.</p>
-            </div>
+<!--                <p>HD movies at the smallest file size.</p>-->
+<!--            </div>-->
 
-            <div class="right_warpper">
+<!--            <div class="right_warpper">-->
 
-                <div class="search_bar">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Quick search">
-                </div>
+<!--                <div class="search_bar">-->
+<!--                    <i class="fa-solid fa-magnifying-glass"></i>-->
+<!--                    <input type="text" placeholder="Quick search">-->
+<!--                </div>-->
 
                 <!--  
                 <ul>
@@ -43,32 +43,32 @@
                 </ul>
                 -->
 
-                <div class="login">
-                    <p>Login</p>
-                    <p class="down">|</p>
-                    <p>Register</p>
-                </div>
+<!--                <div class="login">-->
+<!--                    <p>Login</p>-->
+<!--                    <p class="down">|</p>-->
+<!--                    <p>Register</p>-->
+<!--                </div>-->
 
-            </div>
+<!--            </div>-->
 
-        </nav>
+<!--        </nav>-->
 
-        <div class="main">
+<!--        <div class="main">-->
 
-            <h1>Download YTS YIFY movies: HD smallest size</h1>
-            <p>
-                Welcome to the official YTS.MX (.LT) website.
-                Here you can browse and download YIFY movies in excellent 720p,
-                1080p, 2160p 4K and 3D quality, all at the smallest file size.
-                YTS Movies Torrents.
-            </p>
+<!--            <h1>Download YTS YIFY movies: HD smallest size</h1>-->
+<!--            <p>-->
+<!--                Welcome to the official YTS.MX (.LT) website.-->
+<!--                Here you can browse and download YIFY movies in excellent 720p,-->
+<!--                1080p, 2160p 4K and 3D quality, all at the smallest file size.-->
+<!--                YTS Movies Torrents.-->
+<!--            </p>-->
 
-        </div>
-
-
+<!--        </div>-->
 
 
-<hr>
+
+
+<!--<hr>-->
 
 
 
@@ -100,9 +100,12 @@
 
 <!--              </div>-->
           <%# end %>
-    </section>
+<!--    </section>-->
 
-
+<% if !flash[:notice].blank? %>
+    <%= flash[:notice] %>
+<% end %>
+<br>
     <%= link_to "Add Movie",  films_new_path, class: 'btn' %>
 
     <h1>All Movies</h1>
@@ -112,6 +115,7 @@
     <p><%=m.year%></p>
     <p><%=m.genre%></p>
     <p><%=m.rating%></p>
+    <%#= image_tag m.picture %>
   </div>
 <% end %>
 

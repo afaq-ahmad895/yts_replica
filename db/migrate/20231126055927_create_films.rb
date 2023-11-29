@@ -5,7 +5,6 @@ class CreateFilms < ActiveRecord::Migration[5.2]
       t.integer :year
       t.string :genre
       t.float :rating
-
       t.timestamps
     end
   end
