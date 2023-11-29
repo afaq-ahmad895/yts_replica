@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2023_11_28_141921) do
     t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "movie"
   end
 
   create_table "movies", force: :cascade do |t|

@@ -109,13 +109,14 @@
     <%= link_to "Add Movie",  films_new_path, class: 'btn' %>
 
     <h1>All Movies</h1>
-    <% @movie.each do |m|%>
+    <% @films.each do |film|%>
   <div class="jumbotron">
-    <h3><%=m.title%></h3>
-    <p><%=m.year%></p>
-    <p><%=m.genre%></p>
-    <p><%=m.rating%></p>
-    <%#= image_tag m.picture %>
+    <%= image_tag(film&.movie, style:'width:20%') %>
+    <h3><%=film.title%></h3>
+    <p><%=film.year%></p>
+    <p><%=film.genre%></p>
+    <p><%=film.rating%></p>
+
   </div>
 <% end %>
 

@@ -2,7 +2,7 @@ class FilmsController < ApplicationController
 
   def index
     # @movie_rows = YAML.load_file(Rails.root.join('config', 'movies.yml'))
-    @movie = Film.all
+    @films = Film.all
   end
 
   def new
@@ -13,6 +13,7 @@ class FilmsController < ApplicationController
 
   def create
     @movie = Film.new(movie_params)
+    # @movie.movie.attach(params[:film][:movie])
        # @movie.movie.attach(params[:movie])
     if @movie.save
       flash[:notice]="Movie created successfully"
