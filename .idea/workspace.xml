@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="59f27a4d-587b-4c69-a0f1-05f340566551" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/films_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/films_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/film.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/film.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/films/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/films/edit.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/films/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/films/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/films/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/films/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20231127135229_add_movie_to_films.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +304,7 @@
       <workItem from="1700029969355" duration="33130000" />
       <workItem from="1700669219970" duration="111046000" />
       <workItem from="1701090625418" duration="3459000" />
-      <workItem from="1701103039299" duration="25110000" />
+      <workItem from="1701103039299" duration="38937000" />
     </task>
     <servers />
   </component>
@@ -330,19 +330,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/app/views/films/index.html.erb</url>
-          <line>113</line>
-          <properties myBlockOrdinal="-1">
-            <option name="block-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

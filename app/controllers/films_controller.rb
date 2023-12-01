@@ -6,10 +6,8 @@ class FilmsController < ApplicationController
   end
 
   def new
-
      @movie=Film.new
   end
-
 
   def create
     @movie = Film.new(movie_params)
