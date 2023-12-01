@@ -21,18 +21,18 @@
 
         <nav>
 
-<!--            <div class="left_warpper">-->
-<!--            <img src="<%#= asset_path('image/logo-YTS.svg') %>">-->
+            <div class="left_warpper">
+            <img src="<%= asset_path('image/logo-YTS.svg') %>">
                 
-<!--                <p>HD movies at the smallest file size.</p>-->
-<!--            </div>-->
+                <p>HD movies at the smallest file size.</p>
+            </div>
 
-<!--            <div class="right_warpper">-->
+            <div class="right_warpper">
 
-<!--                <div class="search_bar">-->
-<!--                    <i class="fa-solid fa-magnifying-glass"></i>-->
-<!--                    <input type="text" placeholder="Quick search">-->
-<!--                </div>-->
+                <div class="search_bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Quick search">
+                </div>
 
                 <!--  
                 <ul>
@@ -105,7 +105,8 @@
         <%= flash[:notice] %>
       <% end %>
       <br>
-      <%= link_to "Add Movie",  films_new_path, class: 'btn' %>
+      <%= link_to "Add Movie",  films_new_path  %>
+      <%#= button_to "Add Movie", films_new_path, class: "btn btn-primary" %>
 
       <% @films.in_groups_of(5, false) do |row| %>
         <div class="movies_box">
@@ -119,7 +120,8 @@
                   <p class="rate"><%= film.rating %></p>
                   <p class="categories"><%= film.genre %></p>
 <!--                  <p class="categories"><%#= film['drama'] %></p>-->
-                  <a href="#" class="btn">View Details</a>
+<!--                  <a href="#" class="btn">View Details</a>-->
+                  <%=link_to "View Details", film_path(film), :class => 'btn btn-primary'%>
                 </div>
                 <%= image_tag(film&.movie) %>
               </div>
