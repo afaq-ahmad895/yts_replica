@@ -2,7 +2,7 @@
 
 <%= form_for(:film, url: films_path) do |f| %>
 
-  <% if @movie.errors.any? %>
+    <% if @movie.errors.any? %>
     <% @movie.errors.full_messages.each do |msg| %>
       <div class="alert alert-danger"> <%= msg %> </div>
     <% end %>
