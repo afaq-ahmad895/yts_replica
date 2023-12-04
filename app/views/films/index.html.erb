@@ -123,7 +123,8 @@
 <!--                  <a href="#" class="btn">View Details</a>-->
                   <%=link_to "View Details", film_path(film), :class => 'btn btn-primary'%>
                 </div>
-                <%= image_tag(film&.movie) %>
+                <%#= image_tag(film.movie) %>
+                <img src = "<%= film.movie %>">
               </div>
 
               <div class="text">

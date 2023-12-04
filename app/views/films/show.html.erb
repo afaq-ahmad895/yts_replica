@@ -7,8 +7,8 @@
 <!--  <image src="<%#=(url_for(@movie.movie)) %>">-->
     <%#end %>
 
-<%= image_tag(@movie.movie, style:'width:20%') %>
-
+<%#= image_tag(@movie.movie, style:'width:20%') %>
+<img src = "<%= @movie.movie %>">
 
  <h2><%=@movie.title%></h2>
   <p><%=@movie.year%></p>
