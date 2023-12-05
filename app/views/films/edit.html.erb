@@ -1,6 +1,6 @@
 <h1> Edit Movies</h1>
 
-<%= form_for(:film, url: film_path(@movie), method: :patch)do |f| %>
+<%= form_for(:film, url: film_path(@movie), method: :patch,multipart: true )do |f| %>
 
   <% if @movie.errors.any? %>
     <% @movie.errors.full_messages.each do |msg| %>
@@ -22,8 +22,8 @@
   <%= f.number_field :rating , value: @movie.rating %>
   <br><br>
   <%= f.file_field :movie %>
-  <% if @movie.movie.attached? %>
-    <p>Current File: <%= @movie.movie.filename %></p>
+  <% if @movie.movie.present? %>
+    <p>Current File: <%= image_tag(@movie.movie.url, style:'width:5%') %></p>
   <% end %>
   <br><br>
   <%= f.submit %>
