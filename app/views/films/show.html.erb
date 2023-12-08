@@ -14,9 +14,14 @@
 
  <h2>Title:<%=@movie.title%></h2>
   <p>Year:<%=@movie.year%></p>
-  <p>Genre<%=@movie.genre%></p>
+  <p>Genre:<%=@movie.genre%></p>
    <p>Rating:<%=@movie.rating%></p>
 
+
+
+<% @image_attachments.images.each do |image| %>
+  <%= image_tag image.image.url %>
+<% end %>
 
 
   <%= link_to "Edit", edit_film_path(@movie) %>

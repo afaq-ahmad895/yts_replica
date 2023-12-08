@@ -7,12 +7,13 @@ class FilmsController < ApplicationController
 
   def new
      @movie=Film.new
+      @image_attachment = @movie.image.attachments.build
+     #   @movie.images.build
   end
 
   def create
     @movie = Film.new(movie_params)
-    # @movie.movie.attach(params[:film][:movie])
-       # @movie.movie.attach(params[:movie])
+
     if @movie.save
       flash[:notice]="Movie created successfully"
       redirect_to @movie
@@ -23,6 +24,8 @@ class FilmsController < ApplicationController
 
   def show
      @movie=Film.find(params[:id])
+     # @image_attachments = @movie.images_attributes.all
+     @image_attachments = @movie.image_attachments.all
   end
 
   def edit
@@ -50,7 +53,7 @@ class FilmsController < ApplicationController
   private
 
   def movie_params
-    params.require(:film).permit(:title, :year, :genre, :rating, :movie)
+    params.require(:film).permit(:title, :year, :genre, :rating, :movie, images_attachments_attributes: [:picture] )
   end
 
 end

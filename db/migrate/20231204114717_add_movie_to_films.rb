@@ -3,3 +3,5 @@ class AddMovieToFilms < ActiveRecord::Migration[5.2]
     add_column :films, :movie, :string
   end
 end
+
+

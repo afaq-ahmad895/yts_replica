@@ -336,3 +336,16 @@ section .add .add_box .add_card h3 , p{
     color: #020202
     margin-top: 3px;
 }
+
+/*.image-container {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*}*/
+
+/*.delete-button {*/
+/*    position: absolute;*/
+/*    top: 5px;*/
+/*    right: 5px;*/
+/*    color: red;*/
+/*    font-size: 20px;*/
+/*}*/
