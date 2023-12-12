@@ -7,7 +7,7 @@
 <!--  <image src="<%#=(url_for(@movie.movie)) %>">-->
     <%#end %>
 
-<%= image_tag(@movie.movie.url, style:'width:20%') %>
+<%#= image_tag(@movie.movie.url, style:'width:20%') %>
 <!--<img src = "<%#= @movie.movie%>">-->
 
 
@@ -19,9 +19,13 @@
 
 
 
-<% @image_attachments.images.each do |image| %>
-  <%= image_tag image.image.url %>
+<% @image_attachments.each do |image| %>
+  <%= image_tag image.picture.url ,  style:'width:15%'%>
 <% end %>
+
+
+
+
 
 
   <%= link_to "Edit", edit_film_path(@movie) %>

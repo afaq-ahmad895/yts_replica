@@ -1,20 +1,24 @@
+require 'pry'
 class FilmsController < ApplicationController
 
   def index
     # @movie_rows = YAML.load_file(Rails.root.join('config', 'movies.yml'))
-    @films = Film.all
+     @films = Film.all
   end
 
   def new
      @movie=Film.new
-      @image_attachment = @movie.image.attachments.build
-     #   @movie.images.build
+     @image_attachment = @movie.images.build
   end
 
   def create
     @movie = Film.new(movie_params)
 
     if @movie.save
+      params[:images]['picture'].each do |a|
+         @image_attachment = @movie.images.create!(:picture => a,   :film_id => @movie.id)
+      end
+
       flash[:notice]="Movie created successfully"
       redirect_to @movie
     else
@@ -24,12 +28,12 @@ class FilmsController < ApplicationController
 
   def show
      @movie=Film.find(params[:id])
-     # @image_attachments = @movie.images_attributes.all
-     @image_attachments = @movie.image_attachments.all
+        @image_attachments = @movie.images.all
   end
 
   def edit
     @movie=Film.find(params[:id])
+    @image_attachments = @movie.images.all
   end
 
   def update
@@ -53,7 +57,7 @@ class FilmsController < ApplicationController
   private
 
   def movie_params
-    params.require(:film).permit(:title, :year, :genre, :rating, :movie, images_attachments_attributes: [:picture] )
+    params.require(:film).permit(:title, :year, :genre, :rating, :movie, images_attributes: [:picture,:id,:film_id] )
   end
 
 end

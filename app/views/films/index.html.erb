@@ -49,7 +49,7 @@
 <!--                    <p>Register</p>-->
 <!--                </div>-->
 
-<!--            </div>-->
+            </div>
 
         </nav>
 
@@ -119,12 +119,12 @@
                   <i class="fa-solid fa-star"></i>
                   <p class="rate"><%= film.rating %></p>
                   <p class="categories"><%= film.genre %></p>
-<!--                  <p class="categories"><%#= film['drama'] %></p>-->
-<!--                  <a href="#" class="btn">View Details</a>-->
                   <%=link_to "View Details", film_path(film), :class => 'btn btn-primary'%>
                 </div>
-                <%#= image_tag(film.movie) %>
-                <img src = "<%= film.movie %>">
+
+<!--                <img src="<%#= film.picture.first.url %>">-->
+                <img src = "<%= film %>">
+                <%#= image_tag(film.picture) %>
               </div>
 
               <div class="text">
@@ -180,7 +180,3 @@
 </html>
 
 
-<%# @movies_row.in_groups_of(5, false) do |row| %>
-  <%# row.compact.each do |movie| %>
-  <%# end %>
-<%# end %>
