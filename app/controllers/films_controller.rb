@@ -55,14 +55,6 @@ class FilmsController < ApplicationController
 
 
 
-  def delete_image
-    @image_attachment = Image.find(params[:id])
-    @image_attachment.destroy
-    redirect_to root_path, notice: 'Image deleted successfully.'
-  end
-
-
-
   private
 
   def movie_params
