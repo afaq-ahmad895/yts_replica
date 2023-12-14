@@ -39,6 +39,9 @@ class FilmsController < ApplicationController
   def update
     @movie=Film.find(params[:id])
     if @movie.update(movie_params)
+      params[:images]['picture'].each do |a|
+        @image_attachment = @movie.images.create!(picture: a, film_id: @movie.id)
+      end
       flash[:notice]="Movie updated successfully"
       redirect_to @movie
     else
@@ -52,8 +55,6 @@ class FilmsController < ApplicationController
     flash[:notice]="Movie deleted successfully"
     redirect_to films_path
   end
-
-
 
   private
 

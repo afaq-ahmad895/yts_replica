@@ -122,9 +122,9 @@
                   <%=link_to "View Details", film_path(film), :class => 'btn btn-primary'%>
                 </div>
 
-<!--                <img src="<%#= film.picture.first.url %>">-->
-                
-                <img src = "<%= film. images.first.picture.url %>">
+<!--                <img src="<%#= film.images.picture.first.url %>">-->
+
+                <img src="<%= film.images.first.picture.url %>">
 
 
                 <%#= image_tag(film.picture) %>
