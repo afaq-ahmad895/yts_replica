@@ -22,14 +22,16 @@
   <%= f.number_field :rating , value: @movie.rating %>
   <br><br>
   <%= f.file_field :movie ,multiple: true , name:     "images[picture][]"%>
-  <%binding.pry %>
+
   <% if @image_attachments.present? %>
 <h3>Current images:</h3>
   <% @image_attachments.each do |image| %>
    <%= image_tag image.picture.url ,  style:'width:5%'%>
+
   <% end %>
   <% end %>
 
-  <br><br>
+  <br>
   <%= f.submit %>
 <% end %>
+

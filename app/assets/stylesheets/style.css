@@ -337,15 +337,23 @@ section .add .add_box .add_card h3 , p{
     margin-top: 3px;
 }
 
-/*.image-container {*/
-/*    position: relative;*/
-/*    display: inline-block;*/
-/*}*/
-
-/*.delete-button {*/
+/*.delete-sign {*/
 /*    position: absolute;*/
 /*    top: 5px;*/
 /*    right: 5px;*/
-/*    color: red;*/
-/*    font-size: 20px;*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*    background-image: url('/path/to/delete-sign.webp');*/
+/*    background-size: cover;*/
+/*    opacity: 0.7;*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    line-height: 20px;*/
+/*    font-weight: bold;*/
+/*    text-decoration: none;*/
 /*}*/
+
+/*.delete-sign:hover {*/
+/*    opacity: 1;*/
+/*}*/
+
