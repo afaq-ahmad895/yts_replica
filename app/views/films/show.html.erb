@@ -1,0 +1,97 @@
+
+<% if !flash[:notice].blank? %>
+    <%= flash[:notice] %>
+<% end %>
+
+ <h2>Title:<%=@movie.title%></h2>
+  <p>Year:<%=@movie.year%></p>
+  <p>Genre:<%=@movie.genre%></p>
+   <p>Rating:<%=@movie.rating%></p>
+
+<br><br>
+
+<% @image_attachments.each do |image| %>
+  <%= image_tag image.picture.url ,  style:'width:15%'%>
+<% end %>
+
+<%# @image_attachments.each do |image| %>
+<!--  <div class="position-relative mr-3 text-center file-preview image-preview" style="width: min-content;">-->
+<!--    <div class="img-thumbnail">-->
+      <%#= image_tag image.picture.url, height: 100 %>
+<!--      <button style="top: 5px; right: 5px;" class="btn btn-sm btn-danger position-absolute delete-btn">-->
+<!--        <span aria-hidden="true">&times;</span>-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </div>-->
+<%# end %>
+
+
+
+<!--<script>-->
+<!--        (function (window, $) {-->
+<!--                var FILE_ICON_URL = 'https://icons.iconarchive.com/icons/zhoolego/material/512/Filetype-Docs-icon.png';-->
+
+<!--                function addFileToNewInput(file, newInput) {-->
+<!--                        if (!newInput) { return; }-->
+
+<!--                        var dataTransfer = new DataTransfer();-->
+<!--                        dataTransfer.items.add(file);-->
+<!--                        newInput.files = dataTransfer.files;-->
+<!--                }-->
+
+<!--                function addSrcToPreview(file, preview) {-->
+<!--                        if (!preview) { return; }-->
+
+<!--                        if (file.type.match(/image/)) {-->
+<!--                                var reader = new FileReader();-->
+<!--                                reader.onload = function (e) { preview.src = e.target.result; };-->
+<!--                                reader.readAsDataURL(file);-->
+<!--                        } else {-->
+<!--                                preview.src = FILE_ICON_URL;-->
+<!--                        }-->
+<!--                }-->
+
+<!--                function breakIntoSeparateFiles(input, targetSelector, templateSelector) {-->
+<!--                        var $input = $(input);-->
+<!--                        var templateHtml = $(templateSelector).html();-->
+
+<!--                        if (!input.files) { return; }-->
+
+<!--                        for (var file of input.files) {-->
+<!--                                var $newFile = $(templateHtml).appendTo(targetSelector);-->
+<!--                                addFileToNewInput(file, $newFile.find(".file-input")[0]);-->
+<!--                                addSrcToPreview(file, $newFile.find(".file-preview img")[0]);-->
+
+<!--                                // Add event listener for the delete button-->
+<!--                                $newFile.find(".delete-btn").on("click", function () {-->
+<!--                                        $(this).closest(".file-preview").remove();-->
+<!--                                });-->
+<!--                        }-->
+
+<!--                        $input.val([]);-->
+<!--                }-->
+
+
+<!--                $('.file-preview-container').on('click', '.delete-btn', function () {-->
+<!--                        $(this).closest('.file-preview').remove();-->
+<!--                });-->
+
+
+<!--                $('.file-input').change(function () {-->
+<!--                        breakIntoSeparateFiles(this, '.file-preview-container', '#file-template');-->
+<!--                });-->
+
+<!--        })(window, jQuery);-->
+
+
+
+<!--</script>-->
+
+
+
+
+
+  <%= link_to "Edit", edit_film_path(@movie) %>
+<%= link_to "Delete", film_path(@movie), method: :delete, data: {confirm:'Are you sure?'} %>
+<br><br>
+<%= link_to "Back To Index", films_index_path %>
