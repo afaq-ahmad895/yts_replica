@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  rating: 1.5
+  genres: MyString
+  poster_path: MyString
+  release_date: 2024-01-04
+
+two:
+  title: MyString
+  rating: 1.5
+  genres: MyString
+  poster_path: MyString
+  release_date: 2024-01-04
