@@ -5,6 +5,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f27a4d-587b-4c69-a0f1-05f340566551" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/yts_replica.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/image/default.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/apis.coffee" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/apis.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/apis_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/helpers/apis_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/api.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20240104143649_create_apis.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/1/action4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/1/anabella.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/1/suspense.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/10/action.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/11/blackpanther.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/12/Erzulie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/13/horror2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/14/anabella.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/15/blackpanther.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/16/children.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/17/avatar.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/18/blackpanther.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/19/A_Fish_Tale.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/2/adam.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/2/avatar.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/2/talktome.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/20/blackpanther.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/21/children.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/22/Church_Girl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/23/Erzulie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/24/horror.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/25/horror2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/3/Terror__Trips.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/3/avatar.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/3/blackpanther.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/34/action3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/35/action4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/36/action3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/37/avatar.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/38/avatar.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/39/Shaun_of_the_Dead.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/4/action.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/4/children.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/4/the_batman.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/40/shazam.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/41/children.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/42/adam.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/43/fast.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/44/Church_Girl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/45/A_Fish_Tale.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/5/action1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/5/action4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/5/children.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/6/action3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/6/hulk.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/8/adam.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/controllers/apis_controller_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/fixtures/apis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/models/api_test.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
@@ -304,7 +362,7 @@
       <workItem from="1701090625418" duration="3459000" />
       <workItem from="1701103039299" duration="136106000" />
       <workItem from="1702189218577" duration="110597000" />
-      <workItem from="1704368552827" duration="8152000" />
+      <workItem from="1704368552827" duration="8747000" />
     </task>
     <servers />
   </component>
