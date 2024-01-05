@@ -5,67 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f27a4d-587b-4c69-a0f1-05f340566551" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/yts_replica.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/image/default.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/apis.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/apis.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/apis_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/apis_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/api.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20240104143649_create_apis.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/1/action4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/1/anabella.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/1/suspense.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/10/action.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/11/blackpanther.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/12/Erzulie.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/13/horror2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/14/anabella.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/15/blackpanther.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/16/children.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/17/avatar.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/18/blackpanther.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/19/A_Fish_Tale.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/2/adam.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/2/avatar.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/2/talktome.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/20/blackpanther.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/21/children.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/22/Church_Girl.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/23/Erzulie.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/24/horror.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/25/horror2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/3/Terror__Trips.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/3/avatar.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/3/blackpanther.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/34/action3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/35/action4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/36/action3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/37/avatar.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/38/avatar.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/39/Shaun_of_the_Dead.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/4/action.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/4/children.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/4/the_batman.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/40/shazam.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/41/children.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/42/adam.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/43/fast.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/44/Church_Girl.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/45/A_Fish_Tale.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/5/action1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/5/action4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/5/children.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/6/action3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/6/hulk.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/image/picture/8/adam.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/controllers/apis_controller_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fixtures/apis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/models/api_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/apis/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/yts_replica.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/yts_replica.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/apis_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/apis_controller.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,23 +37,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "BB-35",
-    "last_opened_file_path": "/home/afaq/yts_replica",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "ruby.rails.projectView.checked": "true",
-    "ruby.structure.view.model.defaults.configured": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;BB-35&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/afaq/yts_replica&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/views/films" />
