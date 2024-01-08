@@ -53,8 +53,6 @@
 
         </nav>
 
-
-
         <div class="main">
 
             <h1>Download YTS YIFY movies: HD smallest size</h1>
@@ -64,38 +62,54 @@
                 1080p, 2160p 4K and 3D quality, all at the smallest file size.
                 YTS Movies Torrents.
             </p>
-           
 
         </div>
+      <%= link_to "Add Movie",  yts_new_path  %>
+
+
+      <h1>All Movies</h1>
+      <% @movie.each do |m|%>
+        <div class="jumbotron">
+          <h3><%=m.title%></h3>
+          <p><%=m.year%></p>
+          <p><%=m.genre%></p>
+          <p><%=m.rating%></p>
+        </div>
+        <% end %>
 <hr>
 
-          <% @movie_rows.each do |row| %>
-            <div class="movies_box">
+          <%# @movie_rows.each do |row| %>
+<!--            <div class="movies_box">-->
 
-            <% row.each do |movie|%>
-                <div class="movies_card">
+            <%# row.each do |movie|%>
+<!--                <div class="movies_card">-->
 
-                <div class="movies_image">
-                <div class="hover">
-                  <i class="fa-solid fa-star"></i>
-                  <p class="rate"><%= movie['rating'] %></p>
-                  <p class="categories"><%= movie['action'] %></p>
-                  <p class="categories"><%= movie['drama'] %></p>
-                  <a href="#" class="btn">View Details</a>
-                </div>
-                <%= image_tag movie['image'] %>
-              </div>         
+<!--                <div class="movies_image">-->
+<!--                <div class="hover">-->
+<!--                  <i class="fa-solid fa-star"></i>-->
+<!--                  <p class="rate"><%#= movie['rating'] %></p>-->
+<!--                  <p class="categories"><%#= movie['action'] %></p>-->
+<!--                  <p class="categories"><%#= movie['drama'] %></p>-->
+<!--                  <a href="#" class="btn">View Details</a>-->
+<!--                </div>-->
+                <%#= image_tag movie['image'] %>
+<!--              </div>-->
               
-             <div class="text">
-                <p class="name"><%= movie['name'] %></p>
-                <p class="year"><%= movie['year'] %></p>
-              </div>
-              </div>
+<!--             <div class="text">-->
+<!--                <p class="name"><%#= movie['name'] %></p>-->
+<!--                <p class="year"><%#= movie['year'] %></p>-->
+<!--              </div>-->
+<!--              </div>-->
 
-        <% end %>
+        <%# end %>
 
-              </div>
-          <% end %>
+<!--              </div>-->
+          <%# end %>
+
+
+
+
+
 
 
 

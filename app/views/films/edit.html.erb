@@ -21,7 +21,7 @@
   <%= f.label :rating %>
   <%= f.number_field :rating , value: @movie.rating %>
   <br><br>
-  <%= f.file_field :movie ,multiple: true , name:     "images[picture][]"  %>
+  <%= f.file_field :movie ,multiple: true , name:     "images[picture][]"%>
 
   <% if @image_attachments.present? %>
 <h3>Current images:</h3>
@@ -31,62 +31,5 @@
   <% end %>
 
   <br><br>
-  <%= f.submit  %>
+  <%= f.submit %>
 <% end %>
-
-
-
-<!--<h1>Edit Movies</h1>-->
-
-<%#= form_for(:film, url: film_path(@movie), method: :patch, multipart: true) do |f| %>
-  <%# if @movie.errors.any? %>
-    <%# @movie.errors.full_messages.each do |msg| %>
-<!--      <div class="alert alert-danger"><%#= msg %></div>-->
-    <%# end %>
-  <%# end %>
-
-  <%#= f.label :title %>
-  <%#= f.text_field :title, value: @movie.title %>
-<!--  <br><br>-->
-  <%#= f.label :year %>
-  <%#= f.number_field :year, value: @movie.year %>
-<!--  <br><br>-->
-  <%#= f.label :genre %>
-  <%#= f.text_field :genre, value: @movie.genre %>
-<!--  <br><br>-->
-  <%#= f.label :rating %>
-  <%#= f.number_field :rating, value: @movie.rating %>
-<!--  <br><br>-->
-
-<!--  <div id="file-list" class="mb-2 d-flex"></div>-->
-
-<!--  <label for="upload_input" class="btn btn-warning">Upload</label>-->
-  <%#= f.file_field :movie, id: "upload_input", class: "d-none", multiple: true, name: "images[picture][]" %>
-
-<!--  <template id="file-preview">-->
-<!--    <div class="position-relative mr-3 text-center file-preview" style="width: min-content;">-->
-<!--      <div class="img-thumbnail">-->
-<!--        <img src="" height="100" />-->
-<!--        <button style="top: 5px; right: 5px;" class="btn btn-sm btn-danger position-absolute" onclick="$(this).closest('.file-preview').remove()">-->
-<!--          <span aria-hidden="true">&times;</span>-->
-<!--        </button>-->
-<!--      </div>-->
-
-<!--      <input class="d-none" multiple="multiple" type="file" name="post[images][]">-->
-<!--    </div>-->
-<!--  </template>-->
-
-  <%# if @image_attachments.present? %>
-<!--    <h3>Current images:</h3>-->
-    <%# @image_attachments.each do |image, index| %>
-      <%#= image_tag image.picture.url, style: 'width:5%' %>
-    <%# end %>
-  <%# end %>
-
-<!--  <br><br>-->
-  <%#= f.submit %>
-
-
-
-
-<%# end %>
