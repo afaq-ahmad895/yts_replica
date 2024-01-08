@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_01_04_143649) do
+ActiveRecord::Schema.define(version: 2024_01_08_194357) do
 
   create_table "apis", force: :cascade do |t|
     t.string "title"
     t.float "rating"
     t.string "genres"
-    t.string "poster_path"
     t.date "release_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "picture"
   end
 
   create_table "films", force: :cascade do |t|

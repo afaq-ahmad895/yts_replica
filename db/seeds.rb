@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Api.create!(
-  title: "top gun",
+  title: "Top Gun",
   rating: 8.5,
   genres: "Drama",
-  poster_path: "action.jpeg",
+  picture: "action.jpeg",
   release_date: "2023-01-01"
 )
 
@@ -17,6 +17,14 @@ Api.create!(
   title: "spiderman",
   rating: 7.0,
   genres: "Comedy",
-  poster_path: "adam.jpeg",
+  picture: "adam.jpeg",
+  release_date: "2023-02-15"
+)
+
+Api.create!(
+  title: "Avatar",
+  rating: 5.0,
+  genres: "Comedy",
+  picture: "avatar.jpeg",
   release_date: "2023-02-15"
 )

@@ -28,6 +28,9 @@
   <section>
 
     <h1>Data From Database</h1>
+    <% if @movie_rows.empty? %>
+      <p>No movies found in the database.</p>
+      <% else %>
     <% @movie_rows.each do |movie| %>
       <div class="movies_box">
         <div class="movies_card">
@@ -39,8 +42,8 @@
               <a href="#" class="btn">View Details</a>
             </div>
             <%#= image_tag movie.poster_path %>
-            <img src="<%=  movie.poster_path %>" alt="Movie Poster">
-
+            <img src="<%=  movie.picture %>" alt="Movie Poster">
+            <%binding.pry %>
           </div>
           <div class="text">
             <p class="name"><%= movie.title %></p>
@@ -49,7 +52,7 @@
         </div>
       </div>
     <% end %>
-
+<% end %>
   </section>
 
   <hr>
@@ -96,6 +99,53 @@
 
 
 </section>
+
+
+<hr>
+
+<section>
+  <h1>New movies From Apis, DB movies are not included</h1>
+  <% @new_movies.in_groups_of(5, false) do |row| %>
+    <div class="movies_box">
+
+      <% row.compact.each do |movie| %>
+
+        <div class="movies_card">
+
+          <div class="movies_image">
+            <div class="hover">
+              <i class="fa-solid fa-star"></i>
+              <p class="rate"><%= movie['vote_average'] %></p>
+              <p class="categories"><%= movie['genres'] %></p>
+              <%#= form_tag(add_movie_path, method: :post) do %>
+              <%#= hidden_field_tag :movie_id, movie['id'] %>
+              <%#= submit_tag 'Add to Database', class: 'btn' %>
+              <%# end %>
+              <%= form_with(url: apis_path, method: :post) do |form| %>
+                <%#= form.hidden_field :title, value: movie['title'] %>
+                <%#= form.hidden_field :rating, value: movie['vote_average'] %>
+                <%#= form.hidden_field :genres, value: movie['genres'] %>
+                <%#= form.hidden_field :release_date, value: movie['release_date'] %>
+                <%#= form.hidden_field :poster_path, value: movie['poster_path'] %>
+                <%= form.submit 'Add to Database', class: 'btn' %>
+              <% end %>
+            </div>
+            <%= image_tag movie['poster_path'] %>
+          </div>
+          <div class="text">
+            <p class="name"><%= movie['title'] %></p>
+            <p class="year"><%= movie['release_date'] %></p>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+
+  <% end %>
+
+
+</section>
+
 </body>
 
 </html>
