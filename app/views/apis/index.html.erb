@@ -1,1 +1,101 @@
-<%#= link_to 'Fetch and Store Movies', index_apis_path %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>title - The Official Home of YIFY Movies Torrent Download - YTS</title>
+
+  <link rel="short icon" href="app/assets/images/image/short_icon.png">
+  <link rel="stylesheet" href="app/assets/stylesheets/style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<br>
+  <nav>
+    <%= form_tag(root_path, method: :get) do %>
+      <%= label_tag :movie_id, 'Enter Movie ID:' %>
+      <%= text_field_tag :movie_id %>
+      <%= submit_tag 'Search' %>
+    <% end %>
+  </nav>
+
+<br><br>
+  <section>
+
+    <h1>Data From Database</h1>
+    <% @movie_rows.each do |movie| %>
+      <div class="movies_box">
+        <div class="movies_card">
+          <div class="movies_image">
+            <div class="hover">
+              <i class="fa-solid fa-star"></i>
+              <p class="rate"><%= movie.rating %></p>
+              <p class="categories"><%= movie.genres %></p>
+              <a href="#" class="btn">View Details</a>
+            </div>
+            <%#= image_tag movie.poster_path %>
+            <img src="<%=  movie.poster_path %>" alt="Movie Poster">
+
+          </div>
+          <div class="text">
+            <p class="name"><%= movie.title %></p>
+            <p class="year"><%= movie.release_date %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </section>
+
+  <hr>
+
+  <section>
+  <h1>Data From Apis</h1>
+  <% @movie_detail.in_groups_of(5, false) do |row| %>
+    <div class="movies_box">
+
+      <% row.compact.each do |movie| %>
+
+        <div class="movies_card">
+
+          <div class="movies_image">
+            <div class="hover">
+              <i class="fa-solid fa-star"></i>
+              <p class="rate"><%= movie['vote_average'] %></p>
+              <p class="categories"><%= movie['genres'] %></p>
+              <%#= form_tag(add_movie_path, method: :post) do %>
+                <%#= hidden_field_tag :movie_id, movie['id'] %>
+                <%#= submit_tag 'Add to Database', class: 'btn' %>
+              <%# end %>
+              <%= form_with(url: apis_path, method: :post) do |form| %>
+                <%#= form.hidden_field :title, value: movie['title'] %>
+                <%#= form.hidden_field :rating, value: movie['vote_average'] %>
+                <%#= form.hidden_field :genres, value: movie['genres'] %>
+                <%#= form.hidden_field :release_date, value: movie['release_date'] %>
+                <%#= form.hidden_field :poster_path, value: movie['poster_path'] %>
+                <%= form.submit 'Add to Database', class: 'btn' %>
+              <% end %>
+            </div>
+            <%= image_tag movie['poster_path'] %>
+          </div>
+          <div class="text">
+            <p class="name"><%= movie['title'] %></p>
+            <p class="year"><%= movie['release_date'] %></p>
+          </div>
+        </div>
+
+    <% end %>
+    </div>
+
+  <% end %>
+
+
+</section>
+</body>
+
+</html>

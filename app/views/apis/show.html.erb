@@ -1,0 +1,6 @@
+<%= form_tag(root_path, method: :get) do %>
+  <%= label_tag :movie_id, 'Enter Movie ID:' %>
+  <%= text_field_tag :movie_id %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
