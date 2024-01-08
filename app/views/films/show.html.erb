@@ -11,21 +11,14 @@
 <!--<img src = "<%#= @movie.movie%>">-->
 
 
-
  <h2>Title:<%=@movie.title%></h2>
   <p>Year:<%=@movie.year%></p>
   <p>Genre:<%=@movie.genre%></p>
    <p>Rating:<%=@movie.rating%></p>
 
-
-
 <% @image_attachments.each do |image| %>
   <%= image_tag image.picture.url ,  style:'width:15%'%>
 <% end %>
-
-
-
-
 
   <%= link_to "Edit", edit_film_path(@movie) %>
 <%= link_to "Delete", film_path(@movie), method: :delete, data: {confirm:'Are you sure?'} %>

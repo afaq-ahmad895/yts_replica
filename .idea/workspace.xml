@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f27a4d-587b-4c69-a0f1-05f340566551" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/images.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/yts_replica.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/yts_replica.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/films_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/films_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/uploaders/file_uploader.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/uploaders/file_uploader.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/films/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/films/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/films/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/films/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/films/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/films/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/films/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/films/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20231126055927_create_films.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20231126055927_create_films.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20231208094027_remove_movie_from_films.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20231208094027_remove_movie_from_films.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,22 +43,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;BB-18&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/afaq/yts_replica/app/views/films&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
-    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "/home/afaq/yts_replica",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "ruby.rails.projectView.checked": "true",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/views/films" />
@@ -304,7 +312,9 @@
       <workItem from="1700669219970" duration="111046000" />
       <workItem from="1701090625418" duration="3459000" />
       <workItem from="1701103039299" duration="136106000" />
-      <workItem from="1702189218577" duration="64003000" />
+
+      <workItem from="1702189218577" duration="110597000" />
+      <workItem from="1704368552827" duration="3987000" />
     </task>
     <servers />
   </component>
