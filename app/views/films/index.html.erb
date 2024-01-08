@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title - The Official Home of YIFY Movies Torrent Download - YTS</title>
+    
+    <link rel="short icon" href="app/assets/images/image/short_icon.png">
+    <link rel="stylesheet" href="app/assets/stylesheets/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <section>
+
+        <nav>
+
+            <div class="left_warpper">
+            <img src="<%= asset_path('image/logo-YTS.svg') %>">
+                
+                <p>HD movies at the smallest file size.</p>
+            </div>
+
+            <div class="right_warpper">
+
+                <div class="search_bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Quick search">
+                </div>
+
+                <!--  
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="active">4K</a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Browse Movies</a></li>
+                </ul>
+                -->
+
+<!--                <div class="login">-->
+<!--                    <p>Login</p>-->
+<!--                    <p class="down">|</p>-->
+<!--                    <p>Register</p>-->
+<!--                </div>-->
+
+            </div>
+
+        </nav>
+
+        <div class="main">
+
+            <h1>Download YTS YIFY movies: HD smallest size</h1>
+            <p>
+                Welcome to the official YTS.MX (.LT) website.
+                Here you can browse and download YIFY movies in excellent 720p,
+                1080p, 2160p 4K and 3D quality, all at the smallest file size.
+                YTS Movies Torrents.
+            </p>
+
+        </div>
+
+
+
+
+<hr>
+
+
+
+
+          <%# @movie_rows.each do |row| %>
+<!--            <div class="movies_box">-->
+
+            <%# row.each do |movie|%>
+<!--                <div class="movies_card">-->
+
+<!--                <div class="movies_image">-->
+<!--                <div class="hover">-->
+<!--                  <i class="fa-solid fa-star"></i>-->
+<!--                  <p class="rate"><%#= movie['rating'] %></p>-->
+<!--                  <p class="categories"><%#= movie['action'] %></p>-->
+<!--                  <p class="categories"><%#= movie['drama'] %></p>-->
+<!--                  <a href="#" class="btn">View Details</a>-->
+<!--                </div>-->
+                <%#= image_tag movie['image'] %>
+<!--              </div>-->
+              
+<!--             <div class="text">-->
+<!--                <p class="name"><%#= movie['name'] %></p>-->
+<!--                <p class="year"><%#= movie['year'] %></p>-->
+<!--              </div>-->
+<!--              </div>-->
+
+        <%# end %>
+
+<!--              </div>-->
+          <%# end %>
+
+      <% if !flash[:notice].blank? %>
+        <%= flash[:notice] %>
+      <% end %>
+      <br>
+      <%= link_to "Add Movie",  films_new_path  %>
+      <%#= button_to "Add Movie", films_new_path, class: "btn btn-primary" %>
+
+      <% @films.in_groups_of(5, false) do |row| %>
+        <div class="movies_box">
+
+          <% row.compact.each do |film| %>
+            <div class="movies_card">
+
+              <div class="movies_image">
+                <div class="hover">
+                  <i class="fa-solid fa-star"></i>
+                  <p class="rate"><%= film.rating %></p>
+                  <p class="categories"><%= film.genre %></p>
+                  <%=link_to "View Details", film_path(film), :class => 'btn btn-primary'%>
+                </div>
+
+<!--                <img src="<%#= film.images.picture.first.url %>">-->
+
+                <img src="<%= film.images.first.picture.url %>">
+
+
+                <%#= image_tag(film.picture) %>
+              </div>
+
+              <div class="text">
+                <p class="name"><%= film.title %></p>
+                <p class="year"><%= film.year %></p>
+              </div>
+            </div>
+
+          <% end %>
+
+        </div>
+      <% end %>
+
+
+
+
+
+
+<!--<h1>All Movies</h1>-->
+<%# @films.each do |row|%>
+<%# @films.in_groups_of(5, false) do |row| %>
+<!--  <div class="row">-->
+    <%# row.compact.each do |film| %>
+
+    <%#= image_tag(film&.movie, style:'width:19%') %>
+<!--    <h3><%#=film.title%></h3>-->
+<!--    <p><%#=film.year%></p>-->
+<!--    <p><%#=film.genre%></p>-->
+<!--    <p><%#=film.rating%></p>-->
+
+    <%# end %>
+<!--  </div>-->
+<!--        <br>-->
+<%# end %>
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+</body>
+
+</html>
+
+

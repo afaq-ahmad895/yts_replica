@@ -3,4 +3,3 @@ class RemoveMovieFromFilms < ActiveRecord::Migration[5.2]
     remove_column :films, :movie, :string
   end
 end
-

@@ -13,7 +13,7 @@ section{
     background-position: center;
 }
 
-section nav{  
+section nav{
     width: 100%;
     height: auto;
     background-color: #1d1d1d;
@@ -206,7 +206,7 @@ section .movies_box{
     align-items: center;
     justify-content: space-between;
     padding: 0 50px;
-    float:left;   
+    float:left;
 }
 
 section .movies_box .movies_card{
@@ -332,6 +332,28 @@ section .add .add_box .add_card .add_img img{
 }
 
 section .add .add_box .add_card h3 , p{
-    color: #fff;
+    /*color: #fff;*/
+    color: #020202
     margin-top: 3px;
 }
+
+/*.delete-sign {*/
+/*    position: absolute;*/
+/*    top: 5px;*/
+/*    right: 5px;*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*    background-image: url('/path/to/delete-sign.webp');*/
+/*    background-size: cover;*/
+/*    opacity: 0.7;*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    line-height: 20px;*/
+/*    font-weight: bold;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.delete-sign:hover {*/
+/*    opacity: 1;*/
+/*}*/
+

@@ -21,9 +21,10 @@
   <%= f.number_field :rating %>
 <br><br>
 
+  <%#= f.file_field :movie %>
 
  <%= f.fields_for :images do |image| %>
-  <%= image.file_field :picture, multiple:true  , name:     "images[picture][]" , type: "file" , class: "file-input" %>
+  <%= image.file_field :picture, multiple:true  , name:     "images[picture][]"%>
 <% end %>
 
 
