@@ -1,28 +1,8 @@
 require 'pry'
+require 'open-uri'
 class FilmsController < ApplicationController
-
   def add_movie
-    # movie_id = params[:movie_id]
-    # response = HTTParty.get("https://movies-api14.p.rapidapi.com/movie/#{movie_id}", headers: {
-    #   'X-RapidAPI-Host' => 'movies-api14.p.rapidapi.com',
-    #   'X-RapidAPI-Key' => '562c0c79a0msha9b8db4de63e59dp131a2djsna425bbbdbb01'
-    # })
-    # movie_detail = JSON.parse(response.body)
-    # film =  Film.create(
-    #   rapid_id: ['_id'],
-    #   title: movie_detail['title'],
-    #   year: movie_detail['release_date'],
-    #   genre: movie_detail['genres'],
-    #   rating: movie_detail['vote_average']
-    #   )
-    # if film.save
-    #   film.images.create(picture: movie_detail['poster_path'])
-    #   redirect_to 'index.html.erb', notice: 'Movie added to the database.'
-    # else
-    #   redirect_to 'index.html.erb', alert: 'Failed to add the movie to the database.'
-    # end
-    binding.pry
-        movie_id = params[:movie_id]
+    movie_id = params[:movie_id]
       movie = Film.create(
         rapid_id: params['movie_id'],
         title: params['title'],
@@ -30,13 +10,14 @@ class FilmsController < ApplicationController
         genre: params['genre'],
         year: params['year']
       )
-
     if movie.save
-      movie.images.create(picture: params['picture'])
-      binding.pry
+      if params['picture'].present?
+        movie.images.create(remote_picture_url: params['picture'])
       redirect_to 'index.html.erb', notice: 'Movie added to the database.'
+
     else
       redirect_to 'index.html.erb', alert: 'Failed to add the movie to the database.'
+      end
     end
     end
 
