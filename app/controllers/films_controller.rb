@@ -1,7 +1,25 @@
 require 'pry'
 require 'open-uri'
 class FilmsController < ApplicationController
+  def add_movie
+    movie_id = params[:movie_id]
+    movie = Film.create(
+      rapid_id: params['movie_id'],
+      title: params['title'],
+      rating: params['rating'],
+      genre: params['genre'],
+      year: params['year']
+    )
+    if movie.save
+      if params['picture'].present?
+        movie.images.create(remote_picture_url: params['picture'])
+        redirect_to 'index.html.erb', notice: 'Movie added to the database.'
 
+      else
+        redirect_to 'index.html.erb', alert: 'Failed to add the movie to the database.'
+      end
+    end
+  end
   def index
     @films = Film.all
     movie_id = params[:movie_id]
@@ -71,4 +89,5 @@ class FilmsController < ApplicationController
   end
 
 end
+
 

@@ -95,9 +95,50 @@
   <% end %>
   </tbody>
 </table>
+
+<hr>
+<caption><h1>New Movies From Api except Database</h1></caption>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Title</th>
+    <th scope="col">Release Date</th>
+    <th scope="col">Vote Average</th>
+    <th scope="col">Genres</th>
+    <th scope="col">Image</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @new_movies.in_groups_of(5, false) do |row| %>
+    <% row.compact.each_with_index do |movie, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= movie['title'] %></td>
+        <td><%= movie['release_date'] %></td>
+        <td><%= movie['vote_average'] %></td>
+        <td><%= movie['genres'] %></td>
+        <td><%= image_tag movie['poster_path'], style: 'max-width: 50px; height: auto;' %></td>
+        <td>
+          <%= form_with(url: add_movie_path(movie_id: movie['_id']), method: :post) do |f| %>
+            <%= f.hidden_field :title, value: movie['title'] %>
+            <%= f.hidden_field :rating, value: movie['vote_average'] %>
+            <%= f.hidden_field :genre, value: movie['genres'] %>
+            <%= f.hidden_field :year, value: movie['release_date'] %>
+            <%= f.hidden_field :picture, value: movie['poster_path'] %>
+            <%= f.submit 'Add to Database', class: 'btn' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
 </body>
 
 </html>
+
 
 
 
