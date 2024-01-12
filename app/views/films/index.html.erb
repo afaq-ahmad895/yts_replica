@@ -68,9 +68,37 @@
 </table>
 <hr>
 
+<caption><h1>Movies From Api</h1></caption>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Title</th>
+    <th scope="col">Release Date</th>
+    <th scope="col">Vote Average</th>
+    <th scope="col">Genres</th>
+    <th scope="col">Poster</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @movie_detail.in_groups_of(5, false) do |row| %>
+    <% row.compact.each_with_index do |movie, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= movie['title'] %></td>
+        <td><%= movie['release_date'] %></td>
+        <td><%= movie['vote_average'] %></td>
+        <td><%= movie['genres'] %></td>
+        <td style="max-width: 50px;"><%= image_tag movie['poster_path'], style: "max-width: 100%; height: auto;" %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
 </body>
 
 </html>
+
 
 
 
