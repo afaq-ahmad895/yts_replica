@@ -14,7 +14,6 @@ class FilmsController < ApplicationController
       if params['picture'].present?
         movie.images.create(remote_picture_url: params['picture'])
         redirect_to 'index.html.erb', notice: 'Movie added to the database.'
-
       else
         redirect_to 'index.html.erb', alert: 'Failed to add the movie to the database.'
       end
