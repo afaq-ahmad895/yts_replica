@@ -1,7 +1,24 @@
 require 'pry'
 require 'open-uri'
 class FilmsController < ApplicationController
-
+  def add_movie
+    movie_id = params[:movie_id]
+    movie = Film.create(
+      rapid_id: params['movie_id'],
+      title: params['title'],
+      rating: params['rating'],
+      genre: params['genre'],
+      year: params['year']
+    )
+    if movie.save
+      if params['picture'].present?
+        movie.images.create(remote_picture_url: params['picture'])
+        redirect_to 'index.html.erb', notice: 'Movie added to the database.'
+      else
+        redirect_to 'index.html.erb', alert: 'Failed to add the movie to the database.'
+      end
+    end
+  end
   def index
     @films = Film.all
     movie_id = params[:movie_id]
@@ -11,7 +28,7 @@ class FilmsController < ApplicationController
       'X-RapidAPI-Key' => '562c0c79a0msha9b8db4de63e59dp131a2djsna425bbbdbb01'
     })
     @movie_detail = JSON.parse(response.body)['contents']
-    @new_movies = @movie_detail.reject { |movie| @films.exists?(title: movie['title']) }
+    @new_movies = @movie_detail.reject { |movie| @films.exists?(title: movie['title']) } if @movie_detail.present?
     render 'index.html.erb'
   end
 
@@ -47,8 +64,10 @@ class FilmsController < ApplicationController
   def update
     @movie=Film.find(params[:id])
     if @movie.update(movie_params)
+      if params[:images].present? && params[:images]['picture'].present?
       params[:images]['picture'].each do |a|
         @image_attachment = @movie.images.create!(picture: a, film_id: @movie.id)
+      end
       end
       flash[:notice]="Movie updated successfully"
       redirect_to @movie
@@ -71,4 +90,6 @@ class FilmsController < ApplicationController
   end
 
 end
+
+
 
