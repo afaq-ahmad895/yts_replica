@@ -1,26 +1,18 @@
 
 <% if !flash[:notice].blank? %>
-    <%= flash[:notice] %>
+  <%= flash[:notice] %>
 <% end %>
 
-<%#if @movie.movie.attached? %>
-<!--  <image src="<%#=(url_for(@movie.movie)) %>">-->
-    <%#end %>
-
-<%#= image_tag(@movie.movie.url, style:'width:20%') %>
-<!--<img src = "<%#= @movie.movie%>">-->
-
-
- <h2>Title:<%=@movie.title%></h2>
-  <p>Year:<%=@movie.year%></p>
-  <p>Genre:<%=@movie.genre%></p>
-   <p>Rating:<%=@movie.rating%></p>
+<h2>Title:<%=@movie.title%></h2>
+<p>Year:<%=@movie.year%></p>
+<p>Genre:<%=@movie.genre%></p>
+<p>Rating:<%=@movie.rating%></p>
 
 <% @image_attachments.each do |image| %>
   <%= image_tag image.picture.url ,  style:'width:15%'%>
 <% end %>
 
-  <%= link_to "Edit", edit_film_path(@movie) %>
+<%= link_to "Edit", edit_film_path(@movie) %>
 <%= link_to "Delete", film_path(@movie), method: :delete, data: {confirm:'Are you sure?'} %>
 <br><br>
 <%= link_to "Back To Index", films_index_path %>
@@ -31,3 +23,4 @@
   <%= text_field_tag :movie_id %>
   <%= submit_tag 'Search' %>
 <% end %>
+

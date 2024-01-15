@@ -24,12 +24,13 @@
   <%= f.file_field :movie ,multiple: true , name:     "images[picture][]"%>
 
   <% if @image_attachments.present? %>
-<h3>Current images:</h3>
-  <% @image_attachments.each do |image| %>
-   <%= image_tag image.picture.url ,  style:'width:5%'%>
-  <% end %>
+    <h3>Current images:</h3>
+    <% @image_attachments.each do |image| %>
+      <%= image_tag image.picture.url ,  style:'width:5%'%>
+    <% end %>
   <% end %>
 
   <br><br>
   <%= f.submit %>
 <% end %>
+
