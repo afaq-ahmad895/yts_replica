@@ -5,10 +5,8 @@ class YtsController < ApplicationController
   end
 
   def new
-
     # @movie=Film.new
   end
-
 
   def create
     @movie = Film.new(movie_params)
@@ -25,8 +23,7 @@ class YtsController < ApplicationController
   def movie_params
     params.require(:film).permit(:title, :year, :genre, :rating)
   end
-
-
 end
+
 
 

@@ -14,3 +14,7 @@
  *= require_self
  */
 /**= require font-awesome*/
+.table-container {
+    max-height: 300px;
+    overflow: scroll;
+}

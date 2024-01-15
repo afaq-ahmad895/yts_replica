@@ -80,6 +80,10 @@ GEM
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.4)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     execjs (2.9.1)
     ffi (1.16.3)
@@ -237,6 +241,7 @@ DEPENDENCIES
   carrierwave (~> 1.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  dotenv-rails
   font-awesome-rails
   httparty
   jbuilder (~> 2.5)

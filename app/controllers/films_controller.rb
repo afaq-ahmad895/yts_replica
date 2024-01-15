@@ -1,51 +1,50 @@
 require 'pry'
 require 'open-uri'
 class FilmsController < ApplicationController
+  before_action :set_id, only: [:show, :edit, :update, :destroy]
+
   def add_movie
-    movie_id = params[:movie_id]
-      movie = Film.create(
-        rapid_id: params['movie_id'],
-        title: params['title'],
-        rating: params['rating'],
-        genre: params['genre'],
-        year: params['year']
-      )
+    movie = Film.create(
+      rapid_id: params['movie_id'],
+      title: params['title'],
+      rating: params['rating'],
+      genre: params['genre'],
+      year: params['year']
+    )
     if movie.save
       if params['picture'].present?
         movie.images.create(remote_picture_url: params['picture'])
-      redirect_to 'index.html.erb', notice: 'Movie added to the database.'
-
-    else
-      redirect_to 'index.html.erb', alert: 'Failed to add the movie to the database.'
+        redirect_to 'index.html.erb', notice: 'Movie added to the database.'
+      else
+        redirect_to 'index.html.erb', notice: 'Movie added to the database without a picture.'
       end
+    else
+      redirect_to 'index.html.erb',"Error: #{movie.errors.full_messages.join(", ")}"
     end
-    end
+  end
 
   def index
     @films = Film.all
-    movie_id = params[:movie_id]
-    #  @films = Film.where(title: movie_id)
-    response = HTTParty.get("https://movies-api14.p.rapidapi.com/search?query=#{movie_id}", headers: {
-      'X-RapidAPI-Host' => 'movies-api14.p.rapidapi.com',
-      'X-RapidAPI-Key' => '562c0c79a0msha9b8db4de63e59dp131a2djsna425bbbdbb01'
+    # for my understanding: (@films = Film.where(title: movie_id))
+    response = HTTParty.get("https://movies-api14.p.rapidapi.com/search?query=#{params[:movie_id]}", headers: {
+      'X-RapidAPI-Host' => ENV['X_RAPIDAPI_HOST'],
+      'X-RapidAPI-Key' => ENV['X_RAPIDAPI_KEY']
     })
     @movie_detail = JSON.parse(response.body)['contents']
     @new_movies = @movie_detail.reject { |movie| @films.exists?(title: movie['title']) }
-    render 'index.html.erb'
+    # @new_movies = @movie_detail - @films
   end
 
   def new
-     @movie=Film.new
-     @image_attachment = @movie.images.build
+    @movie=Film.new
+    @image_attachment = @movie.images.build
   end
   def create
     @movie = Film.new(movie_params)
-
     if @movie.save
       params[:images]['picture'].each do |a|
-         @image_attachment = @movie.images.create!(:picture => a,   :film_id => @movie.id)
+        @image_attachment = @movie.images.create!(:picture => a,   :film_id => @movie.id)
       end
-
       flash[:notice]="Movie created successfully"
       redirect_to @movie
     else
@@ -54,17 +53,14 @@ class FilmsController < ApplicationController
   end
 
   def show
-     @movie=Film.find(params[:id])
-        @image_attachments = @movie.images.all
+    @image_attachments = @movie.images.all
   end
 
   def edit
-    @movie=Film.find(params[:id])
     @image_attachments = @movie.images.all
   end
 
   def update
-    @movie=Film.find(params[:id])
     if @movie.update(movie_params)
       params[:images]['picture'].each do |a|
         @image_attachment = @movie.images.create!(picture: a, film_id: @movie.id)
@@ -77,16 +73,20 @@ class FilmsController < ApplicationController
   end
 
   def destroy
-    @movie=Film.find(params[:id])
     @movie.destroy
     flash[:notice]="Movie deleted successfully"
     redirect_to films_path
   end
 
   private
-
   def movie_params
     params.require(:film).permit(:title, :year, :genre , :rapid_id, :rating, :movie, images_attributes: [:picture,:id,:film_id] )
   end
-
+  def set_id
+    @movie=Film.find(params[:id])
+  end
 end
+
+
+
+
