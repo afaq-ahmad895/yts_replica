@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f27a4d-587b-4c69-a0f1-05f340566551" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/films_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/films_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/films/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/films/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/films/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/films/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/films/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/films/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/films/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/films/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,23 +32,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;BB-36-new&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/afaq/yts_replica&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
-    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "BB-36-new",
+    "last_opened_file_path": "/home/afaq/slicket",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "ruby.rails.projectView.checked": "true",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/views/films" />
@@ -307,6 +303,7 @@
       <workItem from="1701103039299" duration="136106000" />
       <workItem from="1702189218577" duration="110597000" />
       <workItem from="1704368552827" duration="3987000" />
+      <workItem from="1705416290523" duration="1823000" />
     </task>
     <servers />
   </component>
