@@ -1,5 +1,7 @@
-<%= link_to 'Download as Excel', films_path(format: :xlsx) , :class => 'btn btn-info'%>
-
+<%= link_to 'Generate Excel', generate_excel_path(format: :xlsx)%>
+<%#= form_tag generate_excel_path(format: :xlsx), method: :get do %>
+<%#= submit_tag 'Generate Excel' %>
+<%# end %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,43 +63,43 @@
 
 <caption><h1>Movies From Database</h1></caption>
 <div class="table-container">
-<table class="table table-bordered">
-  <thead>
-  <tr>
-    <th>#</th>
-    <th>Rating</th>
-    <th>Genre</th>
-    <th>Yts_id</th>
-    <th>Rapid_id</th>
-    <th>Year</th>
-    <th>Title</th>
-    <th>View Details</th>
-    <th scope="col">Image</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% if @films.empty? %>
+  <table class="table table-bordered">
+    <thead>
     <tr>
-      <td colspan="6">No movies found in the database.</td>
+      <th>#</th>
+      <th>Rating</th>
+      <th>Genre</th>
+      <th>Yts_id</th>
+      <th>Rapid_id</th>
+      <th>Year</th>
+      <th>Title</th>
+      <th>View Details</th>
+      <th scope="col">Image</th>
     </tr>
-  <% else %>
-    <% @films.each_with_index do |film, index| %>
+    </thead>
+    <tbody>
+    <% if @films.empty? %>
       <tr>
-        <th scope="row"><%= index + 1 %></th>
-        <td><%= film.rating %></td>
-        <td><%= film.genre %></td>
-        <td><%= film.id %></td>
-        <td><%= film.rapid_id %></td>
-        <td><%= film.year %></td>
-        <td><%= film.title %></td>
-        <td><%= link_to "View Details", film_path(film), :class => 'btn btn-primary'  %></td>
-        <td><img src="<%= film.images.first.picture.url %>" style="max-width: 50px; max-height: 100px;" alt="Movie Image"></td>
+        <td colspan="6">No movies found in the database.</td>
       </tr>
+    <% else %>
+      <% @films.each_with_index do |film, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= film.rating %></td>
+          <td><%= film.genre %></td>
+          <td><%= film.id %></td>
+          <td><%= film.rapid_id %></td>
+          <td><%= film.year %></td>
+          <td><%= film.title %></td>
+          <td><%= link_to "View Details", film_path(film), :class => 'btn btn-primary'  %></td>
+          <td><img src="<%= film.images.first.picture.url %>" style="max-width: 50px; max-height: 100px;" alt="Movie Image"></td>
+        </tr>
+      <% end %>
     <% end %>
-  <% end %>
-  </tbody>
-</table>
-<hr>
+    </tbody>
+  </table>
+  <hr>
 </div>
 
 <!--    </section>-->
@@ -131,32 +133,32 @@
 <hr>
 <caption><h1>Movies From Api</h1></caption>
 <div class="table-container">
-<table class="table table-bordered">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Title</th>
-    <th scope="col">Release Date</th>
-    <th scope="col">Vote Average</th>
-    <th scope="col">Genres</th>
-    <th scope="col">Poster</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @movie_detail.in_groups_of(5, false) do |row| %>
-    <% row.compact.each_with_index do |movie, index| %>
-      <tr>
-        <th scope="row"><%= index + 1 %></th>
-        <td><%= movie['title'] %></td>
-        <td><%= movie['release_date'] %></td>
-        <td><%= movie['vote_average'] %></td>
-        <td><%= movie['genres'] %></td>
-        <td><%= image_tag movie['poster_path'], style: "max-width: 30px; height: auto;" %></td>
-      </tr>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Release Date</th>
+      <th scope="col">Vote Average</th>
+      <th scope="col">Genres</th>
+      <th scope="col">Poster</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @movie_detail.in_groups_of(5, false) do |row| %>
+      <% row.compact.each_with_index do |movie, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= movie['title'] %></td>
+          <td><%= movie['release_date'] %></td>
+          <td><%= movie['vote_average'] %></td>
+          <td><%= movie['genres'] %></td>
+          <td><%= image_tag movie['poster_path'], style: "max-width: 30px; height: auto;" %></td>
+        </tr>
+      <% end %>
     <% end %>
-  <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 </div>
 <!--    <section>-->
 <!--      <h1>New movies From Apis, DB movies are not included</h1>-->
@@ -191,49 +193,50 @@
 <%# end %>
 
 <!--    </section>-->
-<!--<hr>-->
-<!--<caption><h1>New Movies From Api except Database</h1></caption>-->
-<!--<div class="table-container">-->
-<!--<table class="table table-bordered">-->
-<!--  <thead>-->
-<!--  <tr>-->
-<!--    <th scope="col">#</th>-->
-<!--    <th scope="col">Title</th>-->
-<!--    <th scope="col">Release Date</th>-->
-<!--    <th scope="col">Vote Average</th>-->
-<!--    <th scope="col">Genres</th>-->
-<!--    <th scope="col">Image</th>-->
-<!--    <th scope="col">Actions</th>-->
-<!--  </tr>-->
-<!--  </thead>-->
-<!--  <tbody>-->
-  <%# @new_movies.in_groups_of(5, false) do |row| %>
-    <%# row.compact.each_with_index do |movie, index| %>
-<!--      <tr>-->
-<!--        <th scope="row"><%#= index + 1 %></th>-->
-<!--        <td><%#= movie['title'] %></td>-->
-<!--        <td><%#= movie['release_date'] %></td>-->
-<!--        <td><%#= movie['vote_average'] %></td>-->
-<!--        <td><%#= movie['genres'] %></td>-->
-<!--        <td><%#= image_tag movie['poster_path'], style: 'max-width: 50px; height: auto;' %></td>-->
-<!--        <td>-->
-          <%#= form_with(url: add_movie_path(movie_id: movie['_id']), method: :post) do |f| %>
-            <%#= f.hidden_field :title, value: movie['title'] %>
-            <%#= f.hidden_field :rating,value: movie['vote_average'] %>
-            <%#= f.hidden_field :genre, value: movie['genres'] %>
-            <%#= f.hidden_field :year, value: movie['release_date'] %>
-            <%#= f.hidden_field :picture, value: movie['poster_path'] %>
-            <%#= f.submit 'Add to Database', class: 'btn' %>
-          <%# end %>
-<!--        </td>-->
-<!--      </tr>-->
-    <%# end %>
-  <%# end %>
-<!--  </tbody>-->
-<!--</table>-->
-<!--</div>-->
+<hr>
+<caption><h1>New Movies From Api except Database</h1></caption>
+<div class="table-container">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Release Date</th>
+      <th scope="col">Vote Average</th>
+      <th scope="col">Genres</th>
+      <th scope="col">Image</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @new_movies.in_groups_of(5, false) do |row| %>
+      <% row.compact.each_with_index do |movie, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= movie['title'] %></td>
+          <td><%= movie['release_date'] %></td>
+          <td><%= movie['vote_average'] %></td>
+          <td><%= movie['genres'] %></td>
+          <td><%= image_tag movie['poster_path'], style: 'max-width: 50px; height: auto;' %></td>
+          <td>
+            <%= form_with(url: add_movie_path(movie_id: movie['_id']), method: :post) do |f| %>
+              <%= f.hidden_field :title, value: movie['title'] %>
+              <%= f.hidden_field :rating,value: movie['vote_average'] %>
+              <%= f.hidden_field :genre, value: movie['genres'] %>
+              <%= f.hidden_field :year, value: movie['release_date'] %>
+              <%= f.hidden_field :picture, value: movie['poster_path'] %>
+              <%= f.submit 'Add to Database', class: 'btn' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+</div>
 </body>
 </html>
+
 
 
 

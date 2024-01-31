@@ -25,20 +25,42 @@ class FilmsController < ApplicationController
 
   def index
     @films = Film.all
-    respond_to do |format|
-      format.html
-      format.xlsx {
-        response.headers['Content-Disposition'] = 'attachment; filename="films.xlsx"'
-      }
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.xlsx {
+    #     response.headers['Content-Disposition'] = 'attachment; filename="films.xlsx"'
+    #   }
+    # end
     # for my understanding: (@films = Film.where(title: movie_id))
     response = HTTParty.get("https://movies-api14.p.rapidapi.com/search?query=#{params[:movie_id]}", headers: {
       'X-RapidAPI-Host' => ENV['X_RAPIDAPI_HOST'],
       'X-RapidAPI-Key' => ENV['X_RAPIDAPI_KEY']
     })
     @movie_detail = JSON.parse(response.body)['contents']
-    #@new_movies = @movie_detail.reject { |movie| @films.exists?(title: movie['title']) }
+    @new_movies = @movie_detail.reject { |movie| @films.exists?(title: movie['title']) }
     # @new_movies = @movie_detail - @films
+  end
+
+  def generate_excel
+    @films = Film.all
+    workbook = RubyXL::Workbook.new
+    worksheet = workbook[0]
+    worksheet.add_cell(0, 5, 'All movies')
+    worksheet.add_cell(1, 4, 'Id')
+    worksheet.add_cell(1, 5, 'Title')
+    worksheet.add_cell(1, 6, 'Year')
+    @films.each_with_index do |film, index|
+
+      worksheet.add_cell(index + 2, 4, film.id)
+      worksheet.add_cell(index + 2, 5, film.title)
+      worksheet.add_cell(index + 2, 6, film.year)
+    end
+    filename = 'movies_data.xlsx'
+    file_path = Rails.root.join('tmp', filename)
+
+    workbook.write(file_path)
+    #  send_data workbook.stream.read, filename: filename
+    send_data  file_path , filename: filename
   end
 
 
@@ -93,6 +115,7 @@ class FilmsController < ApplicationController
     @movie=Film.find(params[:id])
   end
 end
+
 
 
 

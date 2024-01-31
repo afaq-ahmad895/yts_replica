@@ -8,8 +8,7 @@ gem 'pry'
 gem 'httparty'
 
 
-gem 'axlsx'
-gem 'axlsx_rails'
+gem 'rubyXL', '~> 3.3', '>= 3.3.21'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -70,3 +69,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
