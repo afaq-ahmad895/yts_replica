@@ -25,15 +25,22 @@ class FilmsController < ApplicationController
 
   def index
     @films = Film.all
+    respond_to do |format|
+      format.html
+      format.xlsx {
+        response.headers['Content-Disposition'] = 'attachment; filename="films.xlsx"'
+      }
+    end
     # for my understanding: (@films = Film.where(title: movie_id))
     response = HTTParty.get("https://movies-api14.p.rapidapi.com/search?query=#{params[:movie_id]}", headers: {
       'X-RapidAPI-Host' => ENV['X_RAPIDAPI_HOST'],
       'X-RapidAPI-Key' => ENV['X_RAPIDAPI_KEY']
     })
     @movie_detail = JSON.parse(response.body)['contents']
-    @new_movies = @movie_detail.reject { |movie| @films.exists?(title: movie['title']) }
+    #@new_movies = @movie_detail.reject { |movie| @films.exists?(title: movie['title']) }
     # @new_movies = @movie_detail - @films
   end
+
 
   def new
     @movie=Film.new
@@ -86,6 +93,7 @@ class FilmsController < ApplicationController
     @movie=Film.find(params[:id])
   end
 end
+
 
 
 

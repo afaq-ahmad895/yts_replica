@@ -1,0 +1,18 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "films") do |sheet|
+  sheet.add_row([nil] * 6 + ["All Movies"])
+  sheet.add_row([nil] * 5 + ["Id", "Title", "Year"])
+
+  @films.each do |film|
+    sheet.add_row([nil] * 5 + [film.id, film.title, film.year])
+  end
+end
+
+
+
+
+
+
+
+
