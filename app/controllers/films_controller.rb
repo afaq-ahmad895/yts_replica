@@ -25,12 +25,6 @@ class FilmsController < ApplicationController
 
   def index
     @films = Film.all
-    # respond_to do |format|
-    #   format.html
-    #   format.xlsx {
-    #     response.headers['Content-Disposition'] = 'attachment; filename="films.xlsx"'
-    #   }
-    # end
     # for my understanding: (@films = Film.where(title: movie_id))
     response = HTTParty.get("https://movies-api14.p.rapidapi.com/search?query=#{params[:movie_id]}", headers: {
       'X-RapidAPI-Host' => ENV['X_RAPIDAPI_HOST'],
@@ -49,18 +43,20 @@ class FilmsController < ApplicationController
     worksheet.add_cell(1, 4, 'Id')
     worksheet.add_cell(1, 5, 'Title')
     worksheet.add_cell(1, 6, 'Year')
-    @films.each_with_index do |film, index|
 
-      worksheet.add_cell(index + 2, 4, film.id)
-      worksheet.add_cell(index + 2, 5, film.title)
-      worksheet.add_cell(index + 2, 6, film.year)
+    row_index = 2
+    @films.each_with_index do |film|
+      worksheet.add_cell(row_index, 4, film.id)
+      worksheet.add_cell(row_index, 5, film.title)
+      worksheet.add_cell(row_index, 6, film.year)
+      row_index += 1
     end
-    filename = 'movies_data.xlsx'
-    file_path = Rails.root.join('tmp', filename)
 
-    workbook.write(file_path)
-    #  send_data workbook.stream.read, filename: filename
-    send_data  file_path , filename: filename
+    filename = 'movies_data.xlsx'
+     file_path = Rails.root.join('tmp', filename)
+
+     workbook.write(file_path)
+     send_data  file_path , filename: filename
   end
 
 
